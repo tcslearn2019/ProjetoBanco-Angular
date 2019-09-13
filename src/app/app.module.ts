@@ -7,6 +7,8 @@ import { PrincipalFormComponent } from './components/principal-form/principal-fo
 import { CadastroFormComponent } from './components/cadastro-form/cadastro-form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PrincipalGerenteComponent } from './components/principal-gerente/principal-gerente.component';
+import { ListFormComponent } from './components/list-form/list-form.component';
+import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 
 
 const appRoutes:Routes = [
@@ -14,6 +16,8 @@ const appRoutes:Routes = [
   {path: 'principal', component: PrincipalFormComponent},
   {path: 'cadastro', component: CadastroFormComponent},
   {path: 'principal-gerente', component: PrincipalGerenteComponent},
+  {path: 'lista-clientes', component: ListFormComponent},
+  {path: 'investimento-new', component: InvestimentoNewComponent},
 ];
 
 @NgModule({
@@ -23,7 +27,9 @@ const appRoutes:Routes = [
     PrincipalFormComponent,
     CadastroFormComponent,
     HeaderComponent,
-    PrincipalGerenteComponent
+    PrincipalGerenteComponent,
+    ListFormComponent,
+    InvestimentoNewComponent
   ],
   imports: [
     BrowserModule,
