@@ -32,7 +32,7 @@ const appRoutes:Routes = [
     PrincipalGerenteComponent,
     ListFormComponent,
     InvestimentoNewComponent,
-    InvestimentoUserComponent
+    InvestimentoUserComponent,
   ],
   imports: [
     BrowserModule,
