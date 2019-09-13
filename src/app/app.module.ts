@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { PrincipalFormComponent } from './components/principal-form/principal-form.component';
 
+
 const appRoutes:Routes = [
   {path:'', component: LoginFormComponent},
   {path: 'pr', component: PrincipalFormComponent}
@@ -18,12 +19,9 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
-    LoginFormComponent,
-    //PrincipalComponent,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  exports: [RouterModule]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
