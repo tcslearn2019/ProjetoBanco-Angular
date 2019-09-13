@@ -1,17 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes} from '@angular/router'
+import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { RouterModule, Routes } from '@angular/router';
+import { PrincipalFormComponent } from './components/principal-form/principal-form.component';
 
-const routes: Routes = [
-  { path: '', component:  LoginFormComponent},
+
+const appRoutes:Routes = [
+  {path:'', component: LoginFormComponent},
+  {path: 'pr', component: PrincipalFormComponent}
 ];
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginFormComponent,
+    PrincipalFormComponent
   ],
   imports: [
     BrowserModule,
