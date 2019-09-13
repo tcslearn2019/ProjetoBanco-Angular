@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { PrincipalGerenteComponent } from './components/principal-gerente/principal-gerente.component';
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
+import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
 
 
 const appRoutes:Routes = [
@@ -18,6 +19,7 @@ const appRoutes:Routes = [
   {path: 'principal-gerente', component: PrincipalGerenteComponent},
   {path: 'lista-clientes', component: ListFormComponent},
   {path: 'investimento-new', component: InvestimentoNewComponent},
+  {path: 'investimento-user', component: InvestimentoUserComponent},
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes:Routes = [
     HeaderComponent,
     PrincipalGerenteComponent,
     ListFormComponent,
-    InvestimentoNewComponent
+    InvestimentoNewComponent,
+    InvestimentoUserComponent
   ],
   imports: [
     BrowserModule,
