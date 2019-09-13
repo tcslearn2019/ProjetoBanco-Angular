@@ -1,6 +1,7 @@
 section {
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 0rem;
     background-color: #f1f4fa;
 }
 .wrap {
@@ -44,3 +45,9 @@ h2 {
     font-family: 'Source Sans Pro',sans-serif;
     font-size: 1re
 }
+
+.btn-outline-primary2{
+    color: #212529;
+    /*border-color: #fff;*/
+}
+
