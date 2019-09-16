@@ -2,12 +2,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+<app-header-gerente></app-header-gerente>
 <body>
-
     <div class="container">
 
         <form (ngSubmit) = "processForm()">
@@ -31,8 +28,41 @@
             <div class="form-group">
                 <label for="tel">Telefone</label>
                 <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" id="telefone" placeholder="Telefone">
+        <form data-toggle="validator">
+            <div class="form-group">
+                <br>
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
             </div>
-            
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="number" class="form-control" id="cpf" placeholder="CPF" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="Telefone" ng-model="phoneNumber" ui-us-phone-number-mask>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="Senha" data-minlength="6" required>
+                <span class="help-block">Mínimo de seis (6) digitos.</span>
+            </div>
+            <div class="form-group">
+                <label for="confirma-senha">Confirmar Senha</label>
+                <input type="password" class="form-control" id="confirma-senha" placeholder="Confirme a Senha" 
+                required data-match="#senha" data-match-error="Atenção! As senhas não estão iguais.">
+                <span class="help-block">Deve ser igual a senha informada acima.</span>
+                <div class="help-block with-errors"></div>
+            </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>    
     </div>

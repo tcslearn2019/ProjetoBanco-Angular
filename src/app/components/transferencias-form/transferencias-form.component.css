@@ -1,0 +1,16 @@
+.input-group-text{
+    background-color: #007bff;
+}
+
+span{
+    color: #fff;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+span:hover{
+    background-color: #56baed;
+}
+
+button:hover{
+    background-color: #56baed;
+}

@@ -2,13 +2,12 @@
   <div id="formContent">    
     <br>
     <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Login">
-      <input type="text" id="Senha" class="fadeIn third" name="login" placeholder="Senha">
+      <input type="text" id="login" name="login" ng-model="initializedCpf" placeholder="Login" ui-br-cpf-mask required>
+      <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="Senha" required>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
       <div id="formFooter">
-        <a class="underlineHover" href="#">Esqueceu a senha ?</a>
+        <a class="underlineHover" href="recuperar-senha">Esqueceu a senha ?</a>
       </div>
-
   </div>
 </div>
