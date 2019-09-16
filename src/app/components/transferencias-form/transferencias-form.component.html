@@ -1,23 +1,46 @@
-<br>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="agencia">Agência</span>
+<html>
+<head>
+</head>
+<app-header></app-header>
+<body>
+    <div class="container">
+        <br>
+        <form #tra="ngForm" (ngSubmit)="onSubmit(tra)">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="agencia">Agência</label>
+                        <input type="text" class="form-control" name="agencia" id="agencia" placeholder="Agência"
+                        required #agencia="ngModel" minlength="3" maxlength="4" [(ngModel)]="usuario.agencia">
+                        <div *ngIf="!agencia.valid && agencia.touched" class="alert alert-danger" role="alert">
+                                Necessário 4 digítos</div>
+                    </div>                    
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="conta">Conta</label>
+                        <input type="number" class="form-control" name="conta" id="conta" placeholder="Número da conta"
+                        [(ngModel)]="usuario.conta" required #conta="ngModel" min="6" max="7" minlength="6" maxlength="7">
+                        <div *ngIf="!conta.valid && conta.touched" class="alert alert-danger" role="alert">
+                                Falta o número da conta</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="valor">Valor</label>
+                        <input type="number" class="form-control" required name="valor" id="valor" placeholder="Valor"
+                        [(ngModel)]="usuario.valor" required #valor="ngModel">
+                        <div *ngIf="!valor.valid && valor.touched" class="alert alert-danger" role="alert">
+                                Digite o valor desejado</div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Transferir</button>            
+        </form>
     </div>
-        <input type="text" id="agencia" placeholder="Agência">
-</div>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="conta">Conta</span>
-    </div>
-        <input type="number" id="conta" placeholder="Número da conta">
-</div>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="valor">Valor</span>
-    </div>  
-        <input type="number" id="valor" placeholder="Valor">
-    <div class="input-group-append">
-            <span class="input-group-text">,00</span>
-    </div>
-</div>
-    <button type="submit" class="btn btn-primary">Transferir</button>
+</body>
+</html>
