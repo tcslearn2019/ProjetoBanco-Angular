@@ -10,6 +10,7 @@ import { PrincipalGerenteComponent } from './components/principal-gerente/princi
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
+import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 
 
 const appRoutes:Routes = [
@@ -20,6 +21,7 @@ const appRoutes:Routes = [
   {path: 'lista-clientes', component: ListFormComponent},
   {path: 'investimento-new', component: InvestimentoNewComponent},
   {path: 'investimento-user', component: InvestimentoUserComponent},
+  {path: 'emprestimo-user', component: EmprestimoUserComponent},
 ];
 
 @NgModule({
@@ -33,6 +35,7 @@ const appRoutes:Routes = [
     ListFormComponent,
     InvestimentoNewComponent,
     InvestimentoUserComponent,
+    EmprestimoUserComponent,
   ],
   imports: [
     BrowserModule,
