@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input type="number" class="form-control" id="cpf" placeholder="CPF" required>
+                <input type="number" class="form-control" id="cpf" placeholder="CPF" required ng-model="initializedCpf" ui-br-cpf-mask>
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone</label>
@@ -33,13 +33,13 @@
                 <label for="senha">Senha</label>
                 <input type="password" class="form-control" id="senha" placeholder="Senha" data-minlength="6" required>
                 <span class="help-block">Mínimo de seis (6) digitos.</span>
-            </div>
-            <div class="form-group">
-                <label for="confirma-senha">Confirmar Senha</label>
-                <input type="password" class="form-control" id="confirma-senha" placeholder="Confirme a Senha" 
-                required data-match="#senha" data-match-error="Atenção! As senhas não estão iguais.">
-                <span class="help-block">Deve ser igual a senha informada acima.</span>
-                <div class="help-block with-errors"></div>
+                <div class="form-group">
+                    <label for="confirma-senha">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Confirme a Senha" 
+                    required data-match="#senha" data-match-error="Atenção! As senhas não estão iguais.">
+                    <span class="help-block">Deve ser igual a senha informada acima.</span>
+                    <div class="help-block with-errors"></div>
+                </div> 
             </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>    
