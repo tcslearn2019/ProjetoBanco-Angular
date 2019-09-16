@@ -5,16 +5,16 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form (ngSubmit) = "processForm()">
             <div class="form-group">
                 <br>
-                <label for="nome_investimento">Nome do Investimento</label>
-                <input type="text" class="form-control" id="nome_investimento" placeholder="Nome do Investimento" required>
+                <label for="nome">Nome do Investimento</label>
+                <input type="text" name="nome" class="form-control" [(ngModel)]="tipoInvest.nome" id="nome_investimento" placeholder="Nome do Investimento" required>
             </div>
             <div class="form-group">
                 <br>
-                <label for="Juros">Porcentagem de Juros</label>
-                <input type="number" class="form-control" id="juros" placeholder="Juros" required>
+                <label for="juros">Porcentagem de Juros</label>
+                <input type="number" name="juros" class="form-control"  [(ngModel)]="tipoInvest.juros" id="juros" placeholder="Juros" required>
             </div>
             <button type="submit" class="btn btn-primary">Adicionar</button>
         </form>    

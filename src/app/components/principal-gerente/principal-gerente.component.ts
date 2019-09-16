@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../shared_service/user.service';
+import {TipoInvestimento} from '../../shared_service/tipoinvestimento.service';
 import {User} from '../../user';
+import {Tipoinvestimento} from '../../tipoinvestimento';
 import {Router} from '@angular/router';
 
 @Component({
@@ -10,12 +12,12 @@ import {Router} from '@angular/router';
 })
 export class PrincipalGerenteComponent implements OnInit {
   private users:User[];
-  constructor(private _userService:UserService, private _router:Router) { }
+  constructor(private _userService:UserService, private _router:Router, private _tipoInvestimento:TipoInvestimento) { }
 
   ngOnInit() {
-    this._userService.getUsers().subscribe((users) => {
-      console.log(users);
-      this.users=users;
+    this._tipoInvestimento.getUsers().subscribe((Tipoinvestimento)=>{
+      console.log(Tipoinvestimento);
+      this.users=Tipoinvestimento;
     },(error)=>{
       console.log(error);
     })
@@ -27,5 +29,15 @@ export class PrincipalGerenteComponent implements OnInit {
     this._router.navigate(['/cadastro']);
   }
  
+  ListClients(){
+    this._router.navigate(['/lista-clientes']);
+  }
+
+  CreateInvestiment(){
+    let tipoinvestimento = new Tipoinvestimento();
+    this._tipoInvestimento.setter(tipoinvestimento);
+    this._router.navigate(['investimento-new']);
+  }
+
 
 }

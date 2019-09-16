@@ -18,42 +18,21 @@
                 <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" id="sobrenome" placeholder="Sobrenome">
             </div>
             <div class="form-group">
-                <label for="rg">RG</label>
-                <input type="number" name="rg" class="form-control" id="rg" placeholder="RG">
-            </div>
-            <div class="form-group">
                 <label for="cpf">CPF</label>
                 <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" id="cpf" placeholder="CPF">
             </div>
             <div class="form-group">
                 <label for="tel">Telefone</label>
                 <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" id="telefone" placeholder="Telefone">
-        <form data-toggle="validator">
-            <div class="form-group">
-                <br>
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
-            </div>
-            <div class="form-group">
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" required>
-            </div>
-            <div class="form-group">
-                <label for="cpf">CPF</label>
-                <input type="number" class="form-control" id="cpf" placeholder="CPF" required>
-            </div>
-            <div class="form-group">
-                <label for="telefone">Telefone</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="Telefone" ng-model="phoneNumber" ui-us-phone-number-mask>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
+                <input type="email"  name="email" class="form-control"  [(ngModel)]="user.email" id="email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="password" class="form-control" id="senha" placeholder="Senha" data-minlength="6" required>
+                <label for="pwd">Senha</label>
+                <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" id="senha" placeholder="Senha" data-minlength="6" required>
                 <span class="help-block">Mínimo de seis (6) digitos.</span>
             </div>
             <div class="form-group">
@@ -63,7 +42,7 @@
                 <span class="help-block">Deve ser igual a senha informada acima.</span>
                 <div class="help-block with-errors"></div>
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary" (click)="Teste()">Cadastrar</button>
         </form>    
     </div>
 </body>

@@ -6,28 +6,26 @@
 <div class="container">    
     <table class="table table-striped table-hover">
         <thead>
+            <th scope="row">Id</th>
             <th scope="row">Nome</th>
             <th scope="row">Sobrenome</th>
-            <th scope="row">RG</th>
             <th scope="row">CPF</th>
-            <th scope="row">Telefone</th>
-            <th scope="row">Agência</th>
-            <th scope="row">Conta</th>
             <th scope="row">Senha</th>
-            <th scope="row">Ações</th>
+            <th scope="row">Email</th>
+            <th scope="row">Telefone</th>
+            <th scope="row">Operações</th>
         </thead>
         <tbody>
-            <tr>
-                <th>teste</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button class="btn btn-primary">Editar</button>&nbsp;
-                    <button class="btn btn-danger">Excluir</button></td>
+            <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.fname}}</td>
+                    <td>{{user.lname}}</td>    
+                    <td>{{user.cpf}}</td>             
+                    <td>{{user.pwd}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.tel}}</td>
+                <td><button class="btn btn-primary" (click)="updateUser(user)">Editar</button>&nbsp;
+                    <button class="btn btn-danger" (click)="deleteUser(user)">Excluir</button></td>
             </tr>
         </tbody>
     </table>
