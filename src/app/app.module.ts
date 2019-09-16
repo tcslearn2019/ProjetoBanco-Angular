@@ -11,6 +11,7 @@ import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
+import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 
 
 const appRoutes:Routes = [
@@ -22,6 +23,7 @@ const appRoutes:Routes = [
   {path: 'investimento-new', component: InvestimentoNewComponent},
   {path: 'investimento-user', component: InvestimentoUserComponent},
   {path: 'emprestimo-user', component: EmprestimoUserComponent},
+  {path: 'recuperar-senha', component: RecuperarSenhaComponent},
 ];
 
 @NgModule({
@@ -36,6 +38,7 @@ const appRoutes:Routes = [
     InvestimentoNewComponent,
     InvestimentoUserComponent,
     EmprestimoUserComponent,
+    RecuperarSenhaComponent,
   ],
   imports: [
     BrowserModule,

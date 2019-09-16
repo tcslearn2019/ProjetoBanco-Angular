@@ -6,8 +6,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+<app-header></app-header>
 <body>
-
     <div class="container">
 
         <form>
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="cpf">Telefone</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="Telefone">
+                <input type="tel" class="form-control" id="telefone" placeholder="Telefone" ui-us-phone-number-mask>
             </div>
             
             <button type="submit" class="btn btn-primary">Cadastrar</button>
