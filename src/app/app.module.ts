@@ -5,11 +5,12 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { PrincipalFormComponent } from './components/principal-form/principal-form.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { TransferenciasFormComponent } from './components/transferencias-form/transferencias-form.component';
 
 const appRoutes:Routes = [
   {path:'', component: LoginFormComponent},
-  {path: 'pr', component: PrincipalFormComponent}
+  {path: 'pr', component: PrincipalFormComponent},
+  {path: 'transf', component: TransferenciasFormComponent}
 ];
 
 @NgModule({
@@ -17,7 +18,8 @@ const appRoutes:Routes = [
     AppComponent,
     LoginFormComponent,
     PrincipalFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    TransferenciasFormComponent
   ],
   imports: [
     BrowserModule,

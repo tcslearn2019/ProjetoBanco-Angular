@@ -1,0 +1,14 @@
+.input-group-text{
+    background-color: #007bff;
+}
+
+span{
+    color: #fff;
+}
+span:hover{
+    background-color: #56baed;
+}
+
+button:hover{
+    background-color: #56baed;
+}
