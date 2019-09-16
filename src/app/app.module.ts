@@ -6,6 +6,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { PrincipalFormComponent } from './components/principal-form/principal-form.component';
 import { CadastroFormComponent } from './components/cadastro-form/cadastro-form.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TransferenciasFormComponent } from './components/transferencias-form/transferencias-form.component';
 import { PrincipalGerenteComponent } from './components/principal-gerente/principal-gerente.component';
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
@@ -14,9 +15,8 @@ import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
 
-
 const appRoutes:Routes = [
-  {path: '', component: LoginFormComponent},
+  {path:'', component: LoginFormComponent},
   {path: 'principal', component: PrincipalFormComponent},
   {path: 'cadastro', component: CadastroFormComponent},
   {path: 'principal-gerente', component: PrincipalGerenteComponent},
@@ -25,6 +25,7 @@ const appRoutes:Routes = [
   {path: 'investimento-user', component: InvestimentoUserComponent},
   {path: 'emprestimo-user', component: EmprestimoUserComponent},
   {path: 'recuperar-senha', component: RecuperarSenhaComponent},
+  {path: 'transferencia', component: TransferenciasFormComponent}
 ];
 
 @NgModule({
@@ -32,6 +33,8 @@ const appRoutes:Routes = [
     AppComponent,
     LoginFormComponent,
     PrincipalFormComponent,
+    HeaderComponent,
+    TransferenciasFormComponent,
     CadastroFormComponent,
     HeaderComponent,
     PrincipalGerenteComponent,
