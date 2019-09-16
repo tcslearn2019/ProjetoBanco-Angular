@@ -12,6 +12,7 @@ import { InvestimentoNewComponent } from './components/investimento-new/investim
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
+import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
 
 
 const appRoutes:Routes = [
@@ -39,6 +40,7 @@ const appRoutes:Routes = [
     InvestimentoUserComponent,
     EmprestimoUserComponent,
     RecuperarSenhaComponent,
+    HeaderGerenteComponent,
   ],
   imports: [
     BrowserModule,
