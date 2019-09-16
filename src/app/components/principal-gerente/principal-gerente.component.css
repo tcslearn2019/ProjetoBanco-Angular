@@ -4,6 +4,8 @@ section {
     background-color: white;
 }
 a {
+    
+    color: white!important;
     display: flex;
     background: white;
     padding: 1rem 1rem 1rem 1rem;

@@ -14,6 +14,11 @@ export class ListInvestimentComponent implements OnInit {
   constructor(private _investimentoService:TipoInvestimento, private _router:Router) { }
 
   ngOnInit() {
+    this._investimentoService.getUsers().subscribe((investimento)=>{
+      this.investimento=investimento;
+    },(error)=>{
+      console.log(error);
+    })
   }
 
   deleteUser(Investiment){

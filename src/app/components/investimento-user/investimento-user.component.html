@@ -13,10 +13,10 @@
             <br>
             <label for="tipo-investimento">Tipo de Investimento</label>
             <div class="form-group">
-                <select class="form-control" id="sel1">
-                    <option>CDI</option>
-                    <option>Poupança</option>
-                    <option>IPCA</option>
+                <select>
+                    <option *ngFor="let investimento of investimento" [value]="investimento.idinv">
+                        <p>{{investimento.nome}}</p>
+                    </option>
                 </select>
             </div>
             <div class="form-group">
