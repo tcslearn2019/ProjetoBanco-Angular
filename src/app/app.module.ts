@@ -17,6 +17,7 @@ import {FormsModule} from '@angular/forms';
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
+import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
 
 const appRoutes:Routes = [
   {path:'', component: LoginFormComponent},
@@ -24,6 +25,7 @@ const appRoutes:Routes = [
   {path: 'cadastro', component: CadastroFormComponent},
   {path: 'principal-gerente', component: PrincipalGerenteComponent},
   {path: 'lista-clientes', component: ListFormComponent},
+  {path: 'lista-investiments', component: ListInvestimentComponent},
   {path: 'investimento-new', component: InvestimentoNewComponent},
   {path: 'investimento-user', component: InvestimentoUserComponent},
   {path: 'emprestimo-user', component: EmprestimoUserComponent},
@@ -47,6 +49,7 @@ const appRoutes:Routes = [
     EmprestimoUserComponent,
     RecuperarSenhaComponent,
     HeaderGerenteComponent,
+    ListInvestimentComponent,
   ],
   imports: [
     BrowserModule,

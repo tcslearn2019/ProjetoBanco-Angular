@@ -15,12 +15,7 @@ export class PrincipalGerenteComponent implements OnInit {
   constructor(private _userService:UserService, private _router:Router, private _tipoInvestimento:TipoInvestimento) { }
 
   ngOnInit() {
-    this._tipoInvestimento.getUsers().subscribe((Tipoinvestimento)=>{
-      console.log(Tipoinvestimento);
-      this.users=Tipoinvestimento;
-    },(error)=>{
-      console.log(error);
-    })
+    
   }
 
   newUser(){
@@ -38,6 +33,11 @@ export class PrincipalGerenteComponent implements OnInit {
     this._tipoInvestimento.setter(tipoinvestimento);
     this._router.navigate(['investimento-new']);
   }
+
+  ListInvestiment(){
+    this._router.navigate(['/lista-investiments']);
+  }
+
 
 
 }
