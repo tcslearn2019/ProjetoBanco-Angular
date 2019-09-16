@@ -8,9 +8,12 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
+  private teste: String;
+
   constructor() { }
 
   ngOnInit() {
+    this.teste = "55";
   }
 
 }

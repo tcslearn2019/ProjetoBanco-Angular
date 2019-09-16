@@ -10,27 +10,27 @@
 
     <div class="container">
 
-        <form>
+        <form (ngSubmit) = "processForm()">
             <div class="form-group">
                 <br>
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome">
+                <label for="fname">Nome</label>
+                <input type="text" name="fname" class="form-control" [(ngModel)]="user.fname" id="nome" placeholder="Nome">
             </div>
             <div class="form-group">
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+                <label for="lname">Sobrenome</label>
+                <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" id="sobrenome" placeholder="Sobrenome">
             </div>
             <div class="form-group">
                 <label for="rg">RG</label>
-                <input type="number" class="form-control" id="rg" placeholder="RG">
+                <input type="number" name="rg" class="form-control" id="rg" placeholder="RG">
             </div>
             <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input type="number" class="form-control" id="cpf" placeholder="CPF">
+                <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" id="cpf" placeholder="CPF">
             </div>
             <div class="form-group">
-                <label for="cpf">Telefone</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="Telefone">
+                <label for="tel">Telefone</label>
+                <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" id="telefone" placeholder="Telefone">
             </div>
             
             <button type="submit" class="btn btn-primary">Cadastrar</button>

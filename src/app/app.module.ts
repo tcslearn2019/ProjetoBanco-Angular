@@ -10,7 +10,9 @@ import { PrincipalGerenteComponent } from './components/principal-gerente/princi
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
-
+import {UserService} from './shared_service/user.service';
+import {HttpModule} from '@angular/http'
+import {FormsModule} from '@angular/forms';
 
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
@@ -36,9 +38,11 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
