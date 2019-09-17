@@ -6,44 +6,95 @@
 <app-header-gerente></app-header-gerente>
 <body>
     <div class="container">
-        <form data-toggle="validator">
+        <form data-toggle="validator" #c="ngForm" (ngSubmit)="onSubmit(c)" class="form-horizontal">
             <div class="form-group">
                 <br>
-                <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome" required>
+                <div class="col-sm-12">
+                    <label for="nome" class="control-label">Nome</label>
+                </div>
+                <div class="col-sm-12">                
+                    <input type="text" class="form-control" name="fname" id="nome" placeholder="Nome"
+                    [(ngModel)]="cadastro.fname" required #fname="ngModel">
+                    <div *ngIf="!fname.valid && fname.touched" class="valid-feedback">
+                        Nome é obrigatório.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="sobrenome" class="control-label">Sobrenome</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="lname" id="sobrenome" placeholder="Sobrenome"
+                    [(ngModel)]="cadastro.lname" required #lname="ngModel">
+                    <div *ngIf="!lname.valid && lname.touched" class="alert alert-danger" rol="alert">
+                        Sobrenome obrigatório.
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" required>
+                <div class="col-sm-12">
+                    <label for="cpf" class="control-label">CPF</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="number" class="form-control" name="cpf" id="cpf" placeholder="CPF"
+                    [(ngModel)]="cadastro.cpf" required #cpf="ngModel" minlength="11" maxlength="14">
+                    <div *ngIf="!cpf.valid && cpf.touched" class="alert alert-danger" role="alert">
+                        Informe o CPF!
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="cpf">CPF</label>
-                <input type="number" class="form-control" id="cpf" placeholder="CPF" required ng-model="initializedCpf" ui-br-cpf-mask>
+                <div class="col-sm-12">
+                    <label for="telefone" class="control-label">Telefone</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="Telefone"
+                    [(ngModel)]="cadastro.telefone" required #telefone="ngModel" minlength="8" maxlength="11">
+                    <div *ngIf="!telefone.valid && telefone.touched" class="alert alert-danger" role="alert">
+                        Informe seu telefone!
+                    </div>
+                </div>                    
             </div>
             <div class="form-group">
-                <label for="telefone">Telefone</label>
-                <input type="tel" class="form-control" id="telefone" placeholder="Telefone" ng-model="phoneNumber" ui-us-phone-number-mask>
+                <div class="col-sm-12">
+                    <label for="email" class="control-label">Email</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+                    [(ngModel)]="cadastro.email" required email #email="ngModel">                
+                    <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
+                        Email é obrigatório.
+                    </div>
+                </div>                
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
-                <div class="help-block with-errors"></div>
+                <div class="col-sm-12">
+                    <label for="senha" class="control-label">Senha</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" id="senha" placeholder="Senha" data-minlength="6"
+                    required>
+                    <span class="help-block">Mínimo de seis (6) digitos.</span>                    
+                </div>                
             </div>
             <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="password" class="form-control" id="senha" placeholder="Senha" data-minlength="6" required>
-                <span class="help-block">Mínimo de seis (6) digitos.</span>
-                <div class="form-group">
-                    <label for="confirma-senha">Confirmar Senha</label>
-                    <input type="password" class="form-control" id="senha" placeholder="Confirme a Senha" 
-                    required data-match="#senha" data-match-error="Atenção! As senhas não estão iguais.">
+                <div class="col-sm-12">
+                    <label for="confirma-senha" class="control-label">Confirmar Senha</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
+                    required data-match="#senha" data-match-error="Atenção! As senhas não estão iguais."
+                    required>
                     <span class="help-block">Deve ser igual a senha informada acima.</span>
                     <div class="help-block with-errors"></div>
-                </div> 
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary" [disabled]="!c.valid">Cadastrar</button>
+            </div>
         </form>    
     </div>
-
 </body>
 </html>

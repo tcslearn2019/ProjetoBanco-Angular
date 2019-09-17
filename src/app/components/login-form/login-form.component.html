@@ -2,7 +2,7 @@
   <div id="formContent">    
     <br>
     <form>
-      <input type="text" id="login" name="login" ng-model="initializedCpf" placeholder="Login" ui-br-cpf-mask required>
+      <input type="text" id="login" name="login" [(ngModel)]="initializedCpf" placeholder="Login" required>
       <input type="password" id="senha" class="fadeIn third" name="senha" placeholder="Senha" required>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
