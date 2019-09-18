@@ -11,16 +11,6 @@ import {Router} from '@angular/router';
 export class CadastroFormComponent implements OnInit {
   private user:User;
 
-  cadastro: any = {
-    fname: null,
-    lname: null,
-    cpf: null,
-    telefone: null,
-    email: null,
-    senha: null,
-    confSenha: null
-  }
-
   onSubmit(form){
     console.log(form);
   }
