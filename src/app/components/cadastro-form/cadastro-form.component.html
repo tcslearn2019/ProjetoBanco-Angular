@@ -19,6 +19,12 @@
                         Nome é obrigatório.
                     </div>
                 </div>
+
+        <form (ngSubmit) = "processForm()">
+            <div class="form-group">
+                <br>
+                <label for="fname">Nome</label>
+                <input type="text" name="fname" class="form-control" [(ngModel)]="user.fname" id="nome" placeholder="Nome">
             </div>
             
             <div class="form-group">
@@ -79,6 +85,26 @@
                     required>
                     <span class="help-block">Mínimo de seis (6) digitos.</span>                    
                 </div>                
+                <label for="lname">Sobrenome</label>
+                <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" id="sobrenome" placeholder="Sobrenome">
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" id="cpf" placeholder="CPF">
+            </div>
+            <div class="form-group">
+                <label for="tel">Telefone</label>
+                <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" id="telefone" placeholder="Telefone">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email"  name="email" class="form-control"  [(ngModel)]="user.email" id="email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Senha</label>
+                <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" id="senha" placeholder="Senha" data-minlength="6" required>
+                <span class="help-block">Mínimo de seis (6) digitos.</span>
             </div>
             <div class="form-group">
                 <div class="col-sm-12">

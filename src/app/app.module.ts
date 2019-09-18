@@ -12,10 +12,13 @@ import { PrincipalGerenteComponent } from './components/principal-gerente/princi
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
+import {UserService} from './shared_service/user.service';
+import {HttpModule} from '@angular/http';
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
 import {NgxMaskModule, IConfig} from 'ngx-mask';
+import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
 
 const appRoutes:Routes = [
   {path:'', component: LoginFormComponent},
@@ -23,6 +26,7 @@ const appRoutes:Routes = [
   {path: 'cadastro', component: CadastroFormComponent},
   {path: 'principal-gerente', component: PrincipalGerenteComponent},
   {path: 'lista-clientes', component: ListFormComponent},
+  {path: 'lista-investiments', component: ListInvestimentComponent},
   {path: 'investimento-new', component: InvestimentoNewComponent},
   {path: 'investimento-user', component: InvestimentoUserComponent},
   {path: 'emprestimo-user', component: EmprestimoUserComponent},
@@ -47,15 +51,17 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     InvestimentoUserComponent,
     EmprestimoUserComponent,
     RecuperarSenhaComponent,
-    HeaderGerenteComponent
+    HeaderGerenteComponent,
+    ListInvestimentComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    HttpModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes),
     NgxMaskModule.forRoot(options)
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

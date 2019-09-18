@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../shared_service/user.service';
+import {TipoInvestimento} from '../../shared_service/tipoinvestimento.service';
+import {User} from '../../user';
+import {Tipoinvestimento} from '../../tipoinvestimento';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-principal-gerente',
@@ -6,10 +11,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal-gerente.component.css']
 })
 export class PrincipalGerenteComponent implements OnInit {
-
-  constructor() { }
+  private users:User[];
+  constructor(private _userService:UserService, private _router:Router, private _tipoInvestimento:TipoInvestimento) { }
 
   ngOnInit() {
+    
   }
+
+  newUser(){
+    let user = new User();
+    this._userService.setter(user);
+    this._router.navigate(['/cadastro']);
+  }
+ 
+  ListClients(){
+    this._router.navigate(['/lista-clientes']);
+  }
+
+  CreateInvestiment(){
+    let tipoinvestimento = new Tipoinvestimento();
+    this._tipoInvestimento.setter(tipoinvestimento);
+    this._router.navigate(['investimento-new']);
+  }
+
+  ListInvestiment(){
+    this._router.navigate(['/lista-investiments']);
+  }
+
+
 
 }
