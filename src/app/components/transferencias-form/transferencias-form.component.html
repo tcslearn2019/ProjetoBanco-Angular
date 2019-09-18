@@ -1,8 +1,5 @@
-<html>
-<head>
-</head>
+
 <app-header></app-header>
-<body>
     <div class="container">
         <br>
         <form #tra="ngForm" (ngSubmit)="onSubmit(tra)">
@@ -43,5 +40,3 @@
             <button type="submit" class="btn btn-primary" [disabled]="!tra.valid">Transferir</button>            
         </form>
     </div>
-</body>
-</html>
