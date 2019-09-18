@@ -15,7 +15,7 @@ import { InvestimentoUserComponent } from './components/investimento-user/invest
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
-import {NgxMaskModule} from 'ngx-mask';
+import {NgxMaskModule, IConfig} from 'ngx-mask';
 
 const appRoutes:Routes = [
   {path:'', component: LoginFormComponent},
@@ -30,7 +30,7 @@ const appRoutes:Routes = [
   {path: 'transferencia', component: TransferenciasFormComponent}
 ];
 
-//const options: Partial<IConfig> | (() => Partial<IConfig>);
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
   declarations: [
@@ -47,13 +47,13 @@ const appRoutes:Routes = [
     InvestimentoUserComponent,
     EmprestimoUserComponent,
     RecuperarSenhaComponent,
-    HeaderGerenteComponent    
+    HeaderGerenteComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    //NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot(options)
   ],
   providers: [],
   bootstrap: [AppComponent]
