@@ -1,47 +1,46 @@
+<app-header></app-header>
 <div class="container">
-
-        <form (ngSubmit) = "processForm()">
+    <form (ngSubmit)="processForm()">   
+        <div class="form-group">
+            <label for="fname">Nome</label>
+            <input type="text" name="fname" class="form-control" ngOnInit="user.fname" placeholder="Nome">
             <div class="form-group">
-                <br>
-                <label for="fname">Nome</label>
-                <input type="text"  name="fname" class="form-control" [(ngModel)]="user.fname" placeholder="Nome">
-            <div class="form-group">
-                <br>
-            </div>
+            </div>  
             <div class="form-group">
                 <label for="lname">Sobrenome</label>
-                <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" placeholder="Sobrenome">
+                <input type="text" name="lname" class="form-control" ngOnInit="user.lname" placeholder="Sobrenome">
             </div>
             <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" placeholder="CPF">
+                <input type="number" name="cpf" class="form-control" ngOnInit="user.cpf" placeholder="CPF">
             </div>
             <div class="form-group">
                 <label for="tel">Telefone</label>
-                <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" placeholder="Telefone">
+                <input type="tel" name="tel" class="form-control" ngOnInit="user.tel" placeholder="Telefone">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email"  name="email" class="form-control"  [(ngModel)]="user.email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
+                <input type="email" name="email" class="form-control" ngOnInit="user.email" placeholder="Email"
+                    data-error="Por favor, informe um e-mail correto.">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                 <label for="pwd">Senha</label>
-                <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" placeholder="Senha" data-minlength="6" required>
+                <input type="password" name="pwd" class="form-control" ngOnInit="user.pwd" placeholder="Senha"
+                    data-minlength="6" required>
                 <span class="help-block">Mínimo de seis (6) digitos.</span>
-                
-                <div class="col-sm-12">
-                    <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
-                    data-match="#senha" data-match-error="Atenção! As senhas não estão iguais."
-                    required>
-                    <span class="help-block">Deve ser igual a senha informada acima.</span>
-                    <div class="help-block with-errors"></div>
-                </div>
+            </div>
+            <div class="form-group">
+                <label for="conf-pwd">Confirmar Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
+                    data-match="#senha" data-match-error="Atenção! As senhas não estão iguais." required>
+                <span class="help-block">Deve ser igual a senha informada acima.</span>
+                <div class="help-block with-errors"></div>
             </div>
             <div class="col-sm-3">
                 <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-                <button type="submit" class="btn btn-primary">Cadastrar</button>                
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
-      </div>
-      </form>
-    </div>
+        </div>
+    </form>
+</div>
