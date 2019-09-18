@@ -9,13 +9,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./investimento-new.component.css']
 })
 export class InvestimentoNewComponent implements OnInit {
-  investimento: any = {
-    nomeInvestimento: null,
-    porcentagemJuros: null
-  }
-  onSubmit(form){
-    console.log(form);
-  }
   private tipoInvest:Tipoinvestimento;
 
   constructor(private _investmentService:TipoInvestimento, private _router:Router) { }

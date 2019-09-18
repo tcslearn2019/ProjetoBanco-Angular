@@ -2,13 +2,13 @@
 <app-header></app-header>
     <div class="container">
         <br>
-        <form #tra="ngForm" (ngSubmit)="onSubmit(tra)">
+        <form #tra="ngForm" (ngSubmit)="Enviar()" >
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="agencia">Agência</label>
-                        <input type="text" class="form-control" name="agencia" id="agencia" placeholder="Agência"
-                        required #agencia="ngModel" minlength="3" maxlength="4" [(ngModel)]="usuario.agencia">
+                        <input type="number" class="form-control" name="Agencia" placeholder="Agência"
+                        required #agencia="ngModel" minlength="3" maxlength="4" [(ngModel)]="transferencia.Agencia">
                         <div *ngIf="!agencia.valid && agencia.touched" class="alert alert-danger" role="alert">
                                 Necessário 4 digítos</div>
                     </div>
@@ -18,8 +18,8 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="conta">Conta</label>
-                        <input type="number" class="form-control" name="conta" id="conta" placeholder="Número da conta"
-                        [(ngModel)]="usuario.conta" required #conta="ngModel" minlength="6" maxlength="7">
+                        <input type="number" class="form-control" name="Conta" placeholder="Número da conta"
+                        [(ngModel)]="transferencia.Conta" required #conta="ngModel" minlength="6" maxlength="7">
                         <div *ngIf="!conta.valid && conta.touched" class="alert alert-danger" role="alert">
                                 Falta o número da conta</div>
                     </div>
@@ -29,8 +29,8 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="valor">Valor</label>
-                        <input type="number" class="form-control" required name="valor" id="valor" placeholder="Valor"
-                        [(ngModel)]="usuario.valor" required #valor="ngModel">
+                        <input type="number" class="form-control" required name="Valor" placeholder="Valor"
+                        [(ngModel)]="transferencia.Valor" required #valor="ngModel">
                         <div *ngIf="!valor.valid && valor.touched" class="alert alert-danger" role="alert">
                                 Digite o valor desejado</div>
                     </div>

@@ -1,23 +1,15 @@
 <app-header></app-header>
     <div class="container">
-        <form #inv="ngForm" (ngSubmit)="processForm()">
+        <form (ngSubmit) = "processForm()">
             <div class="form-group">
                 <br>
                 <label for="nome">Nome do Investimento</label>
-                <input type="text" class="form-control" name="nome" id="nome_investimento"
-                placeholder="Nome do Investimento" required #nome_investimento="ngModel"
-                [(ngModel)]="tipoInvest.nome">
-                <div *ngIf="!nomeInvestimento.valid && nomeInvestimento.touched" class="alert alert-danger" role="alert">
-                        Escreva o nome do investimento
-                </div>
+                <input type="text" name="nome" class="form-control" [(ngModel)]="tipoInvest.nome" id="nome_investimento" placeholder="Nome do Investimento" required>
             </div>
             <div class="form-group">
+                <br>
                 <label for="juros">Porcentagem de Juros</label>
-                <input type="number" name="juros" class="form-control" id="juros" placeholder="Juros"
-                required #juros="ngModel" [(ngModel)]="tipoInvest.juros">
-                <div *ngIf="!porcentagemJuros.valid && porcentagemJuros.touched" class="alert alert-danger" role="alert">
-                        Informe a porcentagem de juros.
-                </div>                
+                <input type="number" name="juros" class="form-control"  [(ngModel)]="tipoInvest.juros" id="juros" placeholder="Juros" required>
             </div>
             <button class="btn btn-dark">Voltar</button>&nbsp;
             <button type="submit" class="btn btn-primary">Adicionar</button>
