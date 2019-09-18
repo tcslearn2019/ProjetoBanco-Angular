@@ -1,25 +1,16 @@
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <div class="container">
-        <form (ngSubmit) = "processForm()">
-            <div class="form-group">
-                <br>
-                <label for="nome">Nome do Investimento</label>
-                <input type="text" name="nome" class="form-control" [(ngModel)]="tipoInvest.nome" id="nome_investimento" placeholder="Nome do Investimento" required>
-            </div>
-            <div class="form-group">
-                <br>
-                <label for="juros">Porcentagem de Juros</label>
-                <input type="number" name="juros" class="form-control"  [(ngModel)]="tipoInvest.juros" id="juros" placeholder="Juros" required>
-            </div>
-            <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-            <button type="submit" class="btn btn-primary">Adicionar</button>
-        </form>    
-    </div>
-
-</body>
-</html>
+<div class="container">
+    <form (ngSubmit) = "processForm()">
+        <div class="form-group">
+            <br>
+            <label for="nome">Nome do Investimento</label>
+            <input type="text" name="nome" class="form-control" [(ngModel)]="tipoInvest.nome" id="nome_investimento" placeholder="Nome do Investimento" required>
+        </div>
+        <div class="form-group">
+            <br>
+            <label for="juros">Porcentagem de Juros</label>
+            <input type="number" name="juros" class="form-control"  [(ngModel)]="tipoInvest.juros" id="juros" placeholder="Juros" required>
+        </div>
+        <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>    
+</div>
