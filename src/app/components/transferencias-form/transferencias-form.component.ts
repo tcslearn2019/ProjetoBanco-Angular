@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferenciasFormComponent implements OnInit {
 
+  usuario: any = {
+    agencia: null,
+    conta: null,
+    valor: null
+  }
+
+  onSubmit(form){
+    console.log(form);
+  }
+
   constructor() { }
 
   ngOnInit() {

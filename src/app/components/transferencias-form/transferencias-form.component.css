@@ -11,6 +11,6 @@ span:hover{
     background-color: #56baed;
 }
 
-button:hover{
-    background-color: #56baed;
+.ng-invalid.ng-touched:not(form){
+    border: 1px solid red;
 }

@@ -12,7 +12,21 @@
                 <br>
                 <label for="fname">Nome</label>
                 <input type="text" name="fname" class="form-control" [(ngModel)]="user.fname" id="nome" placeholder="Nome">
+        <form data-toggle="validator" #c="ngForm" (ngSubmit)="onSubmit(c)" class="form-horizontal">
+            <div class="form-group">
+                <br>
+                <div class="col-sm-12">
+                    <label for="nome" class="control-label">Nome</label>
+                </div>
+                <div class="col-sm-12">                
+                    <input type="text" class="form-control" name="fname" id="nome" placeholder="Nome"
+                    [(ngModel)]="cadastro.fname" required #fname="ngModel">
+                    <div *ngIf="!fname.valid && fname.touched" class="alert alert-danger" role="alert">
+                        Nome é obrigatório.
+                    </div>
+                </div>
             </div>
+            
             <div class="form-group">
                 <label for="lname">Sobrenome</label>
                 <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" id="sobrenome" placeholder="Sobrenome">
@@ -34,15 +48,80 @@
                 <label for="pwd">Senha</label>
                 <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" id="senha" placeholder="Senha" data-minlength="6" required>
                 <span class="help-block">Mínimo de seis (6) digitos.</span>
+                <div class="col-sm-12">
+                    <label for="sobrenome" class="control-label">Sobrenome</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="lname" id="sobrenome" placeholder="Sobrenome"
+                    [(ngModel)]="cadastro.lname" required #lname="ngModel">
+                    <div *ngIf="!lname.valid && lname.touched" class="alert alert-danger" rol="alert">
+                        Sobrenome obrigatório.
+                    </div>
+                </div>
             </div>
             <div class="form-group">
-                <label for="confirma-senha">Confirmar Senha</label>
-                <input type="password" class="form-control" id="confirma-senha" placeholder="Confirme a Senha" 
-                required data-match="#senha" data-match-error="Atenção! As senhas não estão iguais.">
-                <span class="help-block">Deve ser igual a senha informada acima.</span>
-                <div class="help-block with-errors"></div>
+                <div class="col-sm-12">
+                    <label for="cpf" class="control-label">CPF</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="String" class="form-control" name="cpf" id="cpf" placeholder="CPF"
+                    [(ngModel)]="cadastro.cpf" required #cpf="ngModel" minlength="11" maxlength="11">
+                    <div *ngIf="!cpf.valid && cpf.touched" class="alert alert-danger" role="alert">
+                        Informe um CPF válido.
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="telefone" class="control-label">Telefone</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="Telefone"
+                    [(ngModel)]="cadastro.telefone" required #telefone="ngModel" minlength="8" maxlength="15"
+                    mask="(00) 0000-0000">
+                    <div *ngIf="!telefone.valid && telefone.touched" class="alert alert-danger" role="alert">
+                        Coloque um telefone válido.
+                    </div>
+                </div>                    
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="email" class="control-label">Email</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+                    [(ngModel)]="cadastro.email" required email #email="ngModel">                
+                    <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
+                        Email é obrigatório.
+                    </div>
+                </div>                
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="senha" class="control-label">Senha</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" id="senha" placeholder="Senha" data-minlength="6"
+                    required>
+                    <span class="help-block">Mínimo de seis (6) digitos.</span>                    
+                </div>                
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <label for="confirma-senha" class="control-label">Confirmar Senha</label>
+                </div>
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
+                    data-match="#senha" data-match-error="Atenção! As senhas não estão iguais."
+                    required>
+                    <span class="help-block">Deve ser igual a senha informada acima.</span>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
+                <button type="submit" class="btn btn-primary" [disabled]="!c.valid">Cadastrar</button>                
+            </div>
         </form>    
     </div>
 </body>
