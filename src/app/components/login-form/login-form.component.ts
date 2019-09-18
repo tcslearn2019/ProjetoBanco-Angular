@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit {
   }
   
   enviarLogin(){
-    this._userService.sendInformation(this.login).subscribe((login)=>{
+      this._userService.sendInformation(this.login).subscribe((login)=>{
       console.log(login.fname);
       this._userService.setter(login);
       this._router.navigate(['/principal']);
