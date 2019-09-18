@@ -12,13 +12,13 @@ import { PrincipalGerenteComponent } from './components/principal-gerente/princi
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
-import {UserService} from './shared_service/user.service';
-import {HttpModule} from '@angular/http';
+import { UserService } from './shared_service/user.service';
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
-import {NgxMaskModule, IConfig} from 'ngx-mask';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
+import { HttpModule } from '@angular/http';
 
 const appRoutes:Routes = [
   {path:'', component: LoginFormComponent},

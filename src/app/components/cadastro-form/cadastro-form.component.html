@@ -6,7 +6,7 @@
 <app-header-gerente></app-header-gerente>
 <body>
     <div class="container">
-        <form data-toggle="validator" #c="ngForm" (ngSubmit)="onSubmit(c)" class="form-horizontal">
+        <form data-toggle="validator" #c="ngForm" (ngSubmit)="processForm()" class="form-horizontal">
             <div class="form-group">
                 <br>
                 <div class="col-sm-12">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-        <form (ngSubmit) = "processForm()">
+        <form>
             <div class="form-group">
                 <br>
                 <label for="fname">Nome</label>
@@ -120,7 +120,7 @@
             </div>
             <div class="col-sm-3">
                 <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-                <button type="submit" class="btn btn-primary" [disabled]="!c.valid">Cadastrar</button>                
+                <button type="submit" class="btn btn-primary" [disabled]="!c.valid" src="lista-clientes">Cadastrar</button>                
             </div>
         </form>    
     </div>
