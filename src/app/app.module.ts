@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes} from '@angular/router'
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
@@ -13,11 +14,13 @@ import { InvestimentoNewComponent } from './components/investimento-new/investim
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
 import {UserService} from './shared_service/user.service';
 import {HttpModule} from '@angular/http'
-import {FormsModule} from '@angular/forms';
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
+
 import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
+
+import {NgxMaskModule, IConfig} from 'ngx-mask';
 
 const appRoutes:Routes = [
   {path:'', component: LoginFormComponent},
@@ -32,6 +35,8 @@ const appRoutes:Routes = [
   {path: 'recuperar-senha', component: RecuperarSenhaComponent},
   {path: 'transferencia', component: TransferenciasFormComponent}
 ];
+
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
   declarations: [

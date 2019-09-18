@@ -1,49 +1,47 @@
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<app-header-gerente></app-header-gerente>
-<body>
-    <div class="container">
+<div class="container">
 
         <form (ngSubmit) = "processForm()">
             <div class="form-group">
                 <br>
                 <label for="fname">Nome</label>
-                <input type="text" name="fname" class="form-control" [(ngModel)]="user.fname" id="nome" placeholder="Nome">
+                <input type="text"  name="fname" class="form-control" [(ngModel)]="user.fname" placeholder="Nome">
+            <div class="form-group">
+                <br>
             </div>
             <div class="form-group">
                 <label for="lname">Sobrenome</label>
-                <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" id="sobrenome" placeholder="Sobrenome">
+                <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" placeholder="Sobrenome">
             </div>
             <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" id="cpf" placeholder="CPF">
+                <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" placeholder="CPF">
             </div>
             <div class="form-group">
                 <label for="tel">Telefone</label>
-                <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" id="telefone" placeholder="Telefone">
+                <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" placeholder="Telefone">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email"  name="email" class="form-control"  [(ngModel)]="user.email" id="email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
+                <input type="email"  name="email" class="form-control"  [(ngModel)]="user.email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
                 <label for="pwd">Senha</label>
-                <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" id="senha" placeholder="Senha" data-minlength="6" required>
+                <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" placeholder="Senha" data-minlength="6" required>
                 <span class="help-block">Mínimo de seis (6) digitos.</span>
+                
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
+                    data-match="#senha" data-match-error="Atenção! As senhas não estão iguais."
+                    required>
+                    <span class="help-block">Deve ser igual a senha informada acima.</span>
+                    <div class="help-block with-errors"></div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="confirma-senha">Confirmar Senha</label>
-                <input type="password" class="form-control" id="confirma-senha" placeholder="Confirme a Senha" 
-                required data-match="#senha" data-match-error="Atenção! As senhas não estão iguais.">
-                <span class="help-block">Deve ser igual a senha informada acima.</span>
-                <div class="help-block with-errors"></div>
+            <div class="col-sm-3">
+                <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
+                <button type="submit" class="btn btn-primary">Cadastrar</button>                
             </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </form>    
+      </div>
+      </form>
     </div>
-</body>
-</html>

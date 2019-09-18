@@ -3,6 +3,7 @@ import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Loan } from '../loan';
+import { Transferencia } from '../transferencia';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,10 @@ export class LoanserviceService {
 
   updateUser(type:Account){
     return this._http.put(this.baseUrl + '/emprestimos/', JSON.stringify(type), this.options).pipe(map((response: Response) => response.json()));
+  }
+
+  sendInformation(transferencia : Transferencia){
+    return this._http.post(this.baseUrl + '/transferencia/', JSON.stringify(transferencia), this.options).pipe(map((response: Response) => response.json()));
   }
 
   errorHandler(error:Response){

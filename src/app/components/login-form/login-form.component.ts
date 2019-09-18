@@ -13,6 +13,7 @@ export class LoginFormComponent implements OnInit {
   constructor(private _userService:UserService, private _router:Router) { }
 
   login:Login
+  
   ngOnInit() {
     this.login = new Login()
   }

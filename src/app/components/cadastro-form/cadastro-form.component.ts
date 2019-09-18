@@ -13,14 +13,13 @@ export class CadastroFormComponent implements OnInit {
 
   constructor(private _userService:UserService, private _router:Router) { }
 
-  ngOnInit() {
-    this.user=this._userService.getter();
+  ngOnInit() {  
+    this.user=this._userService.getter();  
   }
 
   processForm(){
     if(this.user.id==undefined){
       this._userService.createUser(this.user).subscribe((user)=>{
-        console.log(user);
         this._router.navigate(['/principal-gerente']);
       },(error)=>{
         console.log(error);

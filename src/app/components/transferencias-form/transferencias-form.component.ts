@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Loan } from '../../loan';
-import {UserService} from '../../shared_service/user.service';
+import { Transferencia } from '../../transferencia';
 import {LoanserviceService} from '../../shared_service/loanservice.service';
 
 @Component({
@@ -11,18 +10,28 @@ import {LoanserviceService} from '../../shared_service/loanservice.service';
 })
 export class TransferenciasFormComponent implements OnInit {
 
-  constructor(private _loanService:LoanserviceService,private _router:Router) { }
+  transferencia:Transferencia;
+
+  constructor(private _loanService:LoanserviceService, private _router:Router) { }
 
   ngOnInit() {
+    this.transferencia = new Transferencia();
   }
 
-  enviarLogin(){
-    console.log("Foi");
-
-    
-
-
-    this._router.navigate(['/principal']);
+  usuario: any = {
+    agencia: null,
+    conta: null,
+    valor: null
   }
+
+  Enviar(form){
+    this._loanService.sendInformation(this.transferencia).subscribe((transf)=>{  
+      console.log(this.transferencia);
+      console.log(transf);
+      this._router.navigate(['/transferencia']);
+    })
+  }
+
+  
 
 }
