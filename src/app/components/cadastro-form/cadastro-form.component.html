@@ -1,12 +1,5 @@
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<app-header-gerente></app-header-gerente>
-<body>
-    <div class="container">
-        <form data-toggle="validator" #c="ngForm" (ngSubmit)="processForm()" class="form-horizontal">
+<div class="container">
+        <form data-toggle="validator" #c="ngForm" (ngSubmit)="onSubmit(c)" class="form-horizontal">
             <div class="form-group">
                 <br>
                 <div class="col-sm-12">
@@ -124,5 +117,3 @@
             </div>
         </form>    
     </div>
-</body>
-</html>
