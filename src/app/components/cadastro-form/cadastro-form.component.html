@@ -1,6 +1,8 @@
 <app-header-gerente></app-header-gerente>
 <div class="container">
     <form (ngSubmit) = "processForm()">
+        <br>
+        <br>
         <div class="form-group">
             <br>
             <label for="fname">Nome</label>
@@ -14,6 +16,10 @@
             <label for="cpf">CPF</label>
             <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" placeholder="CPF">
         </div>
+        <div class="form-group">
+            <label for="rg">RG</label>
+            <input type="number" name="rg" class="form-control" [(ngModel)]="user.rg" placeholder="RG">
+            </div>
         <div class="form-group">
             <label for="tel">Telefone</label>
             <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" placeholder="Telefone">
