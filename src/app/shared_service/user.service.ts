@@ -2,14 +2,9 @@ import { Injectable } from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import {User} from '../user'
+import { User } from '../user';
+import { Login } from '../login';
 
-/*
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-*/
 @Injectable({
   providedIn: 'root'
 })
@@ -38,6 +33,10 @@ export class UserService {
 
   updateUser(user:User){
     return this._http.put(this.baseUrl + '/users/', JSON.stringify(user), this.options).pipe(map((response: Response) => response.json()));
+  }
+
+  sendInformation(login : Login){
+    return this._http.post(this.baseUrl + '/validation/', JSON.stringify(login), this.options).pipe(map((response: Response) => response.json()));
   }
 
   errorHandler(error:Response){

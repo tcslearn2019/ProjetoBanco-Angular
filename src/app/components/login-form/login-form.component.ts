@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Login } from '../../login';
+import { User } from 'src/app/user';
+import {UserService} from '../../shared_service/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,12 +11,21 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
-  private teste: String;
+  constructor(private _userService:UserService, private _router:Router) { }
 
-  constructor() { }
-
+  login:Login
   ngOnInit() {
-    this.teste = "55";
+    this.login = new Login()
   }
+  
+  enviarLogin(){
+    this._userService.sendInformation(this.login).subscribe((login)=>{
+      console.log(login.fname);
+      this._userService.setter(login);
+      this._router.navigate(['/principal']);
+    })
+  }
+  
+
 
 }
