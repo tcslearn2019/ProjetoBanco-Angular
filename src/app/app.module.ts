@@ -20,6 +20,9 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
 import { HttpModule } from '@angular/http';
 
+import {NgxMaskModule, IConfig} from 'ngx-mask';
+import { ExtratoComponent } from './components/extrato/extrato.component';
+
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
   {path: 'principal', component: PrincipalFormComponent},
@@ -53,6 +56,7 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     RecuperarSenhaComponent,
     HeaderGerenteComponent,
     ListInvestimentComponent,
+    ExtratoComponent
   ],
   imports: [
     BrowserModule,
