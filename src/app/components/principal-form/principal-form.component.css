@@ -12,6 +12,7 @@ a {
     border-radius: 0.5rem;
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 a:hover {
