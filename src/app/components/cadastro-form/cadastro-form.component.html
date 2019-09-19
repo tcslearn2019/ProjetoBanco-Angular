@@ -1,8 +1,7 @@
-<app-header></app-header>
-
+<app-header-gerente></app-header-gerente>
 <div class="container">
-    <br>
-    <form (ngSubmit)="processForm()">
+    <form (ngSubmit) = "processForm()">
+        <br>
         <br>
         <div class="form-group">
             <br>
@@ -28,17 +27,20 @@
         </div>
         <div class="form-group">
             <label for="pwd">Senha</label>
-            <input type="password"  name="pwd" class="form-control" (ngModel)="user.pwd" placeholder="Senha" data-minlength="6" required>
+            <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" placeholder="Senha" data-minlength="6" required>
             <span class="help-block">Mínimo de seis (6) digitos.</span>
-            
+                
             <div class="form-group">
                 <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
-                data-match="#senha" data-match-error="Atenção! As senhas não estão iguais." required>                    
+                data-match="#pwd" data-match-error="Atenção! As senhas não estão iguais."
+                required>
                 <span class="help-block">Deve ser igual a senha informada acima.</span>
                 <div class="help-block with-errors"></div>
             </div>
         </div>
-            <button class="btn btn-dark">Voltar</button>&nbsp;
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
+            <button type="submit" class="btn btn-primary">Cadastrar</button>                
+        </div>
     </form>
 </div>

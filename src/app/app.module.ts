@@ -21,7 +21,7 @@ import { ListInvestimentComponent } from './components/list-investiment/list-inv
 import { HttpModule } from '@angular/http';
 
 const appRoutes:Routes = [
-  {path:'', component: LoginFormComponent},
+  {path: '', component: LoginFormComponent},
   {path: 'principal', component: PrincipalFormComponent},
   {path: 'cadastro', component: CadastroFormComponent},
   {path: 'principal-gerente', component: PrincipalGerenteComponent},

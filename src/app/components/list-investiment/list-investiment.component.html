@@ -1,22 +1,22 @@
-
-    <app-header></app-header>
-
-    <br>
-    <div class="container">    
-        <table class="table table-striped table-hover">
-            <thead>
-                <th scope="row">Id</th>
-                <th scope="row">Nome</th>
-                <th scope="row">Juros</th>
-            </thead>
-            <tbody>
-                <tr *ngFor="let investimento of investimento">
-                        <td>{{investimento.idinv}}</td>
-                        <td>{{investimento.nome}}</td>
-                        <td>{{investimento.juros}}</td>
-                    <td><button class="btn btn-primary" (click)="updateUser(investimento)">Editar</button>&nbsp;
-                        <button class="btn btn-danger" (click)="deleteUser(investimento)">Excluir</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<app-header-gerente></app-header-gerente>
+<br>
+<div class="container">    
+    <table class="table table-striped table-hover">
+        <thead>
+            <th scope="row">Id</th>
+            <th scope="row">Nome</th>
+            <th scope="row">Juros</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let investimento of investimento">
+                    <td>{{investimento.idinv}}</td>
+                    <td>{{investimento.nome}}</td>
+                    <td>{{investimento.juros}}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="updateUser(investimento)">Editar</button>&nbsp;
+                        <button class="btn btn-danger" (click)="deleteUser(investimento)">Excluir</button>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
