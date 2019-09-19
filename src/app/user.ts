@@ -4,7 +4,6 @@ export class User {
     lname:String;
     cpf:String;
     pwd:String;
-    pwd2:String;
     email:String;
     tel:String;
 }

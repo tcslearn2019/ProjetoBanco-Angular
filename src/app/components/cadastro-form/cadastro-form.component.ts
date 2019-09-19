@@ -18,6 +18,10 @@ export class CadastroFormComponent implements OnInit {
     //this.user=new User;  
   }
 
+  onSubmit(form){
+    console.log(form);
+  }
+
   processForm(){
     if(this.user.id==undefined){
       this._userService.createUser(this.user).subscribe((user)=>{
