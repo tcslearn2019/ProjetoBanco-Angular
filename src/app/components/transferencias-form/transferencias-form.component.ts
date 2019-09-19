@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { Router } from '@angular/router';
+import {UserService} from '../../shared_service/user.service';
 import { Transferencia } from '../../transferencia';
-import {LoanserviceService} from '../../shared_service/loanservice.service';
+import {TransferserviceService} from '../../shared_service/transferservice.service';
 
 @Component({
   selector: 'app-transferencias-form',
@@ -12,23 +13,18 @@ export class TransferenciasFormComponent implements OnInit {
 
   transferencia:Transferencia;
 
-  constructor(private _loanService:LoanserviceService, private _router:Router) { }
+  constructor(private _userService:UserService,private _transfService:TransferserviceService, private _router:Router) { }
 
   ngOnInit() {
     this.transferencia = new Transferencia();
   }
 
-  usuario: any = {
-    agencia: null,
-    conta: null,
-    valor: null
-  }
-
-  Enviar(form){
-    this._loanService.sendInformation(this.transferencia).subscribe((transf)=>{  
+  Enviar(){
+    this.transferencia.idOrigem = this._userService.getter().id.toString();
+    this._transfService.sendInformation(this.transferencia).subscribe((transf)=>{  
       console.log(this.transferencia);
       console.log(transf);
-      this._router.navigate(['/transferencia']);
+      this._router.navigate(['/principal']);
     })
   }
 

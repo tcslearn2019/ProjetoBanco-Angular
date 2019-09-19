@@ -12,22 +12,29 @@ import {Account} from '../../account';
 export class PrincipalFormComponent implements OnInit {
   private user:User;
   private acc:Account;
+
   constructor(private _userService:UserService, private _router:Router, private _accounterService:AccountserviceService ) { }
 
   ngOnInit() {
+    this.acc = new Account();
     if(this._userService.getter() == null){
       this._router.navigate(['']);
     }
     
     else{
     this.user=this._userService.getter();
-    this._accounterService.getUsers().subscribe((acc)=>{
-      console.log(acc);
+    this._accounterService.returnBalance(this.user.id).subscribe((acc)=>{
       this.acc=acc;
     },(error)=>{
       console.log(error);
     })   
     }
+  }
+
+
+  newTransfer(){
+
+    this._router.navigate(['/transferencia']);
   }
 
 

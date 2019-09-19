@@ -1,8 +1,8 @@
 <app-header></app-header>
 <section id="menu">
     <div class="container">
-        <div class="row justify-content-around pt-5">
-            <a href="investimento-user" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+        <div href="investimento-user" class="row justify-content-around pt-5">
+            <a class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Investimentos</h5>
                 </div>
@@ -10,15 +10,15 @@
                     <p>Você pode realizar investimentos como Poupança, CDI e IPCA.</p>
                 </div>
             </a>
-            <a href="" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+            <a class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
                 <div class="text-wrap vcenter">
-                    <h5 class="mb-1">Saldo</h5>
+                    <h5 class="mb-1">Saldo </h5>
                 </div>
                 <div class="saldo">
-                    <p></p>
+                    <p>R$ {{acc.saldo}}</p>
                 </div>
             </a>
-            <a href="transferencia" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+            <a (click)="newTransfer()"  class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Transferências</h5>
                 </div>

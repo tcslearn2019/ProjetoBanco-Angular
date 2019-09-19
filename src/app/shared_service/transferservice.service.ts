@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Loan } from '../loan';
+import { Transferencia } from '../transferencia';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoanserviceService {
+export class TransferserviceService {
   private baseUrl:string='http://localhost:8080/banco';
   private headers = new Headers({'Content-Type':'application/json'})
   private options = new RequestOptions({headers:this.headers});
-  private loan:Loan;
+  private transf:Transferencia;
   constructor(private _http:Http) { }
 
   getUsers(){
@@ -34,15 +34,21 @@ export class LoanserviceService {
     return this._http.put(this.baseUrl + '/emprestimos/', JSON.stringify(type), this.options).pipe(map((response: Response) => response.json()));
   }
 
+  sendInformation(transferencia : Transferencia){
+    return this._http.post(this.baseUrl + '/transferencia/', JSON.stringify(transferencia), this.options).pipe(map((response: Response) => response.json()));
+  }
+
   errorHandler(error:Response){
     return Observable.throw(error || "Conection Error");
   }
 
-  setter(loan:Loan){
-    this.loan=loan;
+  setter(transf:Transferencia){
+    this.transf=transf;
   }
 
   getter(){
-    return this.loan;
+    return this.transf;
   }
+
+
 }

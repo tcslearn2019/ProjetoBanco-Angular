@@ -1,5 +1,6 @@
 export class Transferencia {
-    Agencia:Number;
-    Conta:Number;
-    Valor:Number;
+    agencia:String;
+    conta:String;
+    valor:String;
+    idOrigem:String;
 }
