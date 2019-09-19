@@ -6,23 +6,24 @@
         <div class="form-group">
             <br>
             <label for="fname">Nome</label>
-            <input type="text"  name="fname" class="form-control" (ngModel)="user.fname" placeholder="Nome">
+            <input type="text"  name="fname" class="form-control" [(ngModel)]="user.fname" placeholder="Nome">
         </div>
         <div class="form-group">
             <label for="lname">Sobrenome</label>
-            <input type="text" name="lname" class="form-control" (ngModel)="user.lname" placeholder="Sobrenome">
+            <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" placeholder="Sobrenome">
         </div>
         <div class="form-group">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" class="form-control" (ngModel)="user.cpf" placeholder="CPF">
+            <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" placeholder="CPF">
         </div>
         <div class="form-group">
             <label for="tel">Telefone</label>
-            <input type="tel" name="tel" class="form-control" (ngModel)="user.tel" placeholder="Telefone">
+            <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" placeholder="Telefone"
+            minlength="(00) 0000-0000" maxlength="(00) 00000-0000" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email"  name="email" class="form-control"  (ngModel)="user.email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
+            <input type="email"  name="email" class="form-control" [(ngModel)]="user.email" placeholder="Email" data-error="Por favor, informe um e-mail correto.">
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
