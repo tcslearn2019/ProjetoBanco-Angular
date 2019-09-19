@@ -1,13 +1,14 @@
 <app-header-gerente></app-header-gerente>
     <div class="container">
+        <br>
+        <br>
+        <br>
         <form (ngSubmit) = "processForm()">
             <div class="form-group">
-                <br>
                 <label for="nome">Nome do Investimento</label>
                 <input type="text" name="nome" class="form-control" [(ngModel)]="tipoInvest.nome" id="nome_investimento" placeholder="Nome do Investimento" required>
             </div>
             <div class="form-group">
-                <br>
                 <label for="juros">Porcentagem de Juros</label>
                 <input type="number" name="juros" class="form-control"  [(ngModel)]="tipoInvest.juros" id="juros" placeholder="Juros" required>
             </div>
