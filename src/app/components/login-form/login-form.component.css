@@ -48,6 +48,7 @@ html {
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
+    margin: 130px;
   }
   
   #formFooter {
@@ -232,4 +233,7 @@ input:focus::-moz-placeholder {  /* Firefox 19+ */
 }
 input:focus:-ms-input-placeholder {  
   color: transparent;  
+}
+img {
+  height: 657px;
 }
