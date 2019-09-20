@@ -10,37 +10,38 @@
                         <label for="agencia">Agência</label>
                         <input type="number" class="form-control" name="Agencia" placeholder="Agência"
                         required #agencia="ngModel" minlength="3" maxlength="4" [(ngModel)]="transferencia.Agencia">
-                    <div *ngIf="!agencia.valid && agencia.touched" class="alert alert-danger" role="alert">
+                        <div *ngIf="!agencia.valid && agencia.touched" class="alert alert-danger" role="alert">
                                 Necessário 4 digítos</div>
-                </div>
-            </div>                
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="conta">Conta</label>
-                    <input type="number" class="form-control" name="Conta" placeholder="Número da conta"
+                    </div>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="conta">Conta</label>
+                        <input type="number" class="form-control" name="Conta" placeholder="Número da conta"
                         [(ngModel)]="transferencia.Conta" required #conta="ngModel" minlength="6" maxlength="7">
-                    <div *ngIf="!conta.valid && conta.touched" class="alert alert-danger" role="alert">
+                        <div *ngIf="!conta.valid && conta.touched" class="alert alert-danger" role="alert">
                                 Falta o número da conta
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="valor">Valor</label>
-                    <input type="number" class="form-control" required name="Valor" placeholder="Valor"
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="valor">Valor</label>
+                        <input type="number" class="form-control" required name="Valor" placeholder="Valor"
                         [(ngModel)]="transferencia.Valor" required #valor="ngModel">
-                    <div *ngIf="!valor.valid && valor.touched" class="alert alert-danger" role="alert">
-                                Digite o valor desejado
+                        <div *ngIf="!valor.valid && valor.touched" class="alert alert-danger" role="alert">
+                            Digite o valor desejado
+                        </div>
                     </div>
                 </div>
             </div>
-        <div>
-            <a class="btn btn-dark" href="principal">Voltar</a>&nbsp;
-            <button type="submit" class="btn btn-primary" [disabled]="!tra.valid">Transferir</button>            
-        </div>
-    </form>
-</div>
+            <div>
+                <a class="btn btn-dark" href="principal">Voltar</a>&nbsp;
+                <button type="submit" class="btn btn-primary" [disabled]="!tra.valid">Transferir</button>            
+            </div>
+        </form>
+    </div>
