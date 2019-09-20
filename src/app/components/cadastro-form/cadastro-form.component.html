@@ -7,7 +7,7 @@
             <br>
             <label for="fname">Nome</label>
             <input type="text"  name="fname" class="form-control" [(ngModel)]="user.fname" placeholder="Nome"
-            required #fname="ngModel" pattern="[a-zA-Z]+">
+            required #fname="ngModel" pattern="[a-zA-Z\s]+">
             <div *ngIf="!fname.valid && fname.touched" class="alert alert-danger" role="alert">
                 Nome obrigatório e somente letras.
             </div>
@@ -77,3 +77,4 @@
         </div>
     </form>
 </div>
+<app-footer></app-footer>
