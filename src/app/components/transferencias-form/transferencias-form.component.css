@@ -14,3 +14,7 @@ span:hover{
 .ng-invalid.ng-touched:not(form){
     border: 1px solid red;
 }
+
+.voltar {
+    text-decoration-color: white!important;
+}

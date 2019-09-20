@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container">
+    <form>
+        <br>
+        <br>
+        <br>
+        <label for="tipo-investimento">Tipo de Investimento</label>
+        <div class="form-group">
+            <select>
+                <option *ngFor="let investimento of investimento" [value]="investimento.idinv">
+                    <p>{{investimento.nome}}</p>
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="valor">Valor</label>
+            <input type="number" class="form-control" id="valor" placeholder="Valor" required>
+        </div>
+        <a class="btn btn-dark" href="investimento-new">Voltar</a>&nbsp;
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>    
+</div>

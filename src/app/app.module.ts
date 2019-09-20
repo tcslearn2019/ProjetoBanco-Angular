@@ -12,18 +12,21 @@ import { PrincipalGerenteComponent } from './components/principal-gerente/princi
 import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
-import {UserService} from './shared_service/user.service';
-import {HttpModule} from '@angular/http'
+import { UserService } from './shared_service/user.service';
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
-
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
-
-import {NgxMaskModule, IConfig} from 'ngx-mask';
+import { HttpModule } from '@angular/http';
+import { ExtratoComponent } from './components/extrato/extrato.component';
+import { RealizarEmprestimoComponent } from './components/realizar-emprestimo/realizar-emprestimo.component';
+import { VerEmprestimoComponent } from './components/ver-emprestimo/ver-emprestimo.component';
+import { RealizarInvestimentoComponent } from './components/realizar-investimento/realizar-investimento.component';
+import { VerInvestimentoComponent } from './components/ver-investimento/ver-investimento.component';
 
 const appRoutes:Routes = [
-  {path:'', component: LoginFormComponent},
+  {path: '', component: LoginFormComponent},
   {path: 'principal', component: PrincipalFormComponent},
   {path: 'cadastro', component: CadastroFormComponent},
   {path: 'principal-gerente', component: PrincipalGerenteComponent},
@@ -33,7 +36,12 @@ const appRoutes:Routes = [
   {path: 'investimento-user', component: InvestimentoUserComponent},
   {path: 'emprestimo-user', component: EmprestimoUserComponent},
   {path: 'recuperar-senha', component: RecuperarSenhaComponent},
-  {path: 'transferencia', component: TransferenciasFormComponent}
+  {path: 'transferencia', component: TransferenciasFormComponent},
+  {path: 'realizar-emprestimo', component: RealizarEmprestimoComponent},
+  {path: 'ver-emprestimos', component: VerEmprestimoComponent},
+  {path: 'realizar-investimento', component: RealizarInvestimentoComponent},
+  {path: 'ver-investimento', component: RealizarInvestimentoComponent},
+  {path: 'extrato', component: ExtratoComponent},
 ];
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
@@ -55,12 +63,18 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     RecuperarSenhaComponent,
     HeaderGerenteComponent,
     ListInvestimentComponent,
+    ExtratoComponent,
+    RealizarEmprestimoComponent,
+    VerEmprestimoComponent,
+    RealizarInvestimentoComponent,
+    VerInvestimentoComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgxMaskModule.forRoot(options),
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

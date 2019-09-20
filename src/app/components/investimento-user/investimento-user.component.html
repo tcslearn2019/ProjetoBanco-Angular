@@ -1,32 +1,27 @@
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
 <app-header></app-header>
-<body>
+<section id="menu">
     <div class="container">
-        <form>
-            <br>
-            <label for="tipo-investimento">Tipo de Investimento</label>
-            <div class="form-group">
-                <select>
-                    <option *ngFor="let investimento of investimento" [value]="investimento.idinv">
-                        <p>{{investimento.nome}}</p>
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="valor">Valor</label>
-                <input type="number" class="form-control" id="valor" placeholder="Valor" required>
-            </div>
-            <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-            <button type="submit" class="btn btn-primary">Adicionar</button>
-        </form>    
+        <br>
+        <br>
+        <div class="row justify-content-around pt-5">
+            <a href="realizar-investimento" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+                <div class="text-wrap vcenter">
+                    <h5 class="mb-1">Realizar Investimento</h5>
+                </div>
+                <div class="emprestimo">
+                    <br>
+                    <p>Realize um novo Investimento. Ganhe mais a cada dia!</p>
+                </div>
+            </a>
+            <a href="ver-investimento"  class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+                <div class="text-wrap vcenter">
+                    <h5 class="mb-1">Ver Investimentos</h5>
+                </div>
+                <div class="ver-emprestimo">
+                    <br>
+                    <p>Veja aqui tudo sobre seus Investimentos.</p>
+                </div>
+            </a>
+        </div>
     </div>
-
-</body>
-</html>
+</section>
