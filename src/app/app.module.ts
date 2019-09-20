@@ -20,6 +20,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
 import { HttpModule } from '@angular/http';
 import { ExtratoComponent } from './components/extrato/extrato.component';
+import { ParticlesModule } from 'angular-particle';
 
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
@@ -61,7 +62,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot(options),
+    ParticlesModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

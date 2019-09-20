@@ -3,7 +3,7 @@
         <br>
         <br>
         <br>
-        <form>            
+        <form #form="ngForm" class="needs-validation" novalidate>            
             <label for="tipo-investimento">Tipo de Investimento</label>
             <div class="form-group">
                 <select>
@@ -15,9 +15,12 @@
             <div class="form-group">
                 <label for="valor">Valor</label>
                 <input type="number" class="form-control" id="valor" placeholder="Valor"
-                required>
+                required >
+                <div>
+                    Informe o valor do investimento.
+                </div>
             </div>
             <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-            <button type="submit" class="btn btn-primary">Adicionar</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Adicionar</button>
         </form>    
     </div>

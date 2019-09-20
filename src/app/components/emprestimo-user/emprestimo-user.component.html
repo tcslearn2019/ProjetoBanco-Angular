@@ -3,7 +3,7 @@
     <br>
     <br>
     <div class="container">
-        <form (ngSubmit) = "processForm()">
+        <form #emp="ngForm" (ngSubmit)="processForm()" class="needs-validation">
             <div class="form-group">
                 <label for="conta">Conta</label>
                 <input type="number" class="form-control" id="conta" placeholder="Conta" required>
@@ -17,6 +17,6 @@
                 <input type="date" class="form-control" id="data" min="2019-09-01" max="2022-12-30">
             </div>
             <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-            <button type="submit" class="btn btn-primary">Realizar Emprestimo</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!emp.valid">Realizar Emprestimo</button>
         </form>    
     </div>
