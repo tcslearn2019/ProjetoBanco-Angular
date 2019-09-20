@@ -1,20 +1,27 @@
 <app-header></app-header>
-<div class="container">
-    <form>
+<section id="menu">
+    <div class="container">
         <br>
-        <label for="tipo-investimento">Tipo de Investimento</label>
-        <div class="form-group">
-            <select>
-                <option *ngFor="let investimento of investimento" [value]="investimento.idinv">
-                    <p>{{investimento.nome}}</p>
-                </option>
-            </select>
+        <br>
+        <div class="row justify-content-around pt-5">
+            <a href="realizar-investimento" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+                <div class="text-wrap vcenter">
+                    <h5 class="mb-1">Realizar Investimento</h5>
+                </div>
+                <div class="emprestimo">
+                    <br>
+                    <p>Realize um novo Investimento. Ganhe mais a cada dia!</p>
+                </div>
+            </a>
+            <a href="ver-investimento"  class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+                <div class="text-wrap vcenter">
+                    <h5 class="mb-1">Ver Investimentos</h5>
+                </div>
+                <div class="ver-emprestimo">
+                    <br>
+                    <p>Veja aqui tudo sobre seus Investimentos.</p>
+                </div>
+            </a>
         </div>
-        <div class="form-group">
-            <label for="valor">Valor</label>
-            <input type="number" class="form-control" id="valor" placeholder="Valor" required>
-        </div>
-        <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-    </form>    
-</div>
+    </div>
+</section>

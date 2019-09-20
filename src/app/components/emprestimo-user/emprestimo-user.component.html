@@ -1,22 +1,27 @@
 <app-header></app-header>
-<div class="container">
-    <form>
-        <div class="form-group">
-            <br>
-            <label for="conta">Conta</label>
-            <input type="number" class="form-control" id="conta" placeholder="Conta" required>
+<section id="menu">
+    <div class="container">
+        <br>
+        <br>
+        <div class="row justify-content-around pt-5">
+            <a href="realizar-emprestimo" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+                <div class="text-wrap vcenter">
+                    <h5 class="mb-1">Realizar Emprestimo</h5>
+                </div>
+                <div class="emprestimo">
+                    <br>
+                    <p>Realize um novo Emprestimo. Aqui os juros são mais baixos!</p>
+                </div>
+            </a>
+            <a href="ver-emprestimos"  class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+                <div class="text-wrap vcenter">
+                    <h5 class="mb-1">Ver Emprestimos</h5>
+                </div>
+                <div class="ver-emprestimo">
+                    <br>
+                    <p>Veja aqui tudo sobre seus Emprestimos.</p>
+                </div>
+            </a>
         </div>
-        <div class="form-group">
-            <br>
-            <label for="valor">Valor</label>
-            <input type="number" class="form-control" id="valor" placeholder="Valor" required>
-        </div>
-        <div class="form-group">
-            <br>
-            <label for="data">Data</label>
-            <input type="date" class="form-control" id="data" min="2019-09-01" max="2022-12-30">
-        </div>
-    <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-    <button type="submit" class="btn btn-primary">Realizar Emprestimo</button>
-    </form>    
-</div>
+    </div>
+</section>

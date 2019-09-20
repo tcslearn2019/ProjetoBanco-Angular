@@ -21,6 +21,10 @@ import { ListInvestimentComponent } from './components/list-investiment/list-inv
 
 import {NgxMaskModule, IConfig} from 'ngx-mask';
 import { ExtratoComponent } from './components/extrato/extrato.component';
+import { RealizarEmprestimoComponent } from './components/realizar-emprestimo/realizar-emprestimo.component';
+import { VerEmprestimoComponent } from './components/ver-emprestimo/ver-emprestimo.component';
+import { RealizarInvestimentoComponent } from './components/realizar-investimento/realizar-investimento.component';
+import { VerInvestimentoComponent } from './components/ver-investimento/ver-investimento.component';
 
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
@@ -33,7 +37,10 @@ const appRoutes:Routes = [
   {path: 'investimento-user', component: InvestimentoUserComponent},
   {path: 'emprestimo-user', component: EmprestimoUserComponent},
   {path: 'recuperar-senha', component: RecuperarSenhaComponent},
-  {path: 'transferencia', component: TransferenciasFormComponent}
+  {path: 'transferencia', component: TransferenciasFormComponent},
+  {path: 'realizar-emprestimo', component: RealizarEmprestimoComponent},
+  {path: 'ver-emprestimos', component: VerEmprestimoComponent},
+  {path: 'realizar-investimento', component: RealizarInvestimentoComponent},
 ];
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
@@ -55,7 +62,11 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     RecuperarSenhaComponent,
     HeaderGerenteComponent,
     ListInvestimentComponent,
-    ExtratoComponent
+    ExtratoComponent,
+    RealizarEmprestimoComponent,
+    VerEmprestimoComponent,
+    RealizarInvestimentoComponent,
+    VerInvestimentoComponent
   ],
   imports: [
     BrowserModule,

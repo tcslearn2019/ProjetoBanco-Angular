@@ -24,7 +24,4 @@ export class LoginFormComponent implements OnInit {
       this._router.navigate(['/principal']);
     })
   }
-  
-
-
 }
