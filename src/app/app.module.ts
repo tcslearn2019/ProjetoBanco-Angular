@@ -13,13 +13,12 @@ import { ListFormComponent } from './components/list-form/list-form.component';
 import { InvestimentoNewComponent } from './components/investimento-new/investimento-new.component';
 import { InvestimentoUserComponent } from './components/investimento-user/investimento-user.component';
 import { UserService } from './shared_service/user.service';
-import { HttpModule } from '@angular/http'
 import { EmprestimoUserComponent } from './components/emprestimo-user/emprestimo-user.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { HeaderGerenteComponent } from './components/header-gerente/header-gerente.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ListInvestimentComponent } from './components/list-investiment/list-investiment.component';
-
-import {NgxMaskModule, IConfig} from 'ngx-mask';
+import { HttpModule } from '@angular/http';
 import { ExtratoComponent } from './components/extrato/extrato.component';
 import { RealizarEmprestimoComponent } from './components/realizar-emprestimo/realizar-emprestimo.component';
 import { VerEmprestimoComponent } from './components/ver-emprestimo/ver-emprestimo.component';
@@ -74,7 +73,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgxMaskModule.forRoot(options),
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

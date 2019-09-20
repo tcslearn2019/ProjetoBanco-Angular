@@ -1,19 +1,26 @@
 <app-header-gerente></app-header-gerente>
-<div class="container">
-    <form (ngSubmit) = "processForm()">
+    <div class="container">
         <br>
         <br>
-        <div class="form-group">
-            <br>
-            <label for="nome">Nome do Investimento</label>
-            <input type="text" name="nome" class="form-control" [(ngModel)]="tipoInvest.nome" id="nome_investimento" placeholder="Nome do Investimento" required>
-        </div>
-        <div class="form-group">
-            <br>
-            <label for="juros">Porcentagem de Juros</label>
-            <input type="number" name="juros" class="form-control"  [(ngModel)]="tipoInvest.juros" id="juros" placeholder="Juros" required>
-        </div>
-        <a class="btn btn-dark" href="principal-gerente">Voltar</a>&nbsp;
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-    </form>    
-</div>
+        <br>
+        <form #form="ngForm" (ngSubmit)="processForm()" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="nome_investimento">Nome do Investimento</label>
+                <input type="text" name="nome" class="form-control" id="nome_investimento" placeholder="Nome do Investimento"
+                [(ngModel)]="tipoInvest.nome" required #nome="ngModel">
+                <div *ngIf="!nome.valid && nome.touched" class="alert alert-danger" role="alert">
+                    Nome do investimento obrigatório.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="juros">Porcentagem de Juros</label>
+                <input type="number" name="juros" class="form-control" id="juros" placeholder="Juros"
+                [(ngModel)]="tipoInvest.juros" required #juros="ngModel">
+                <div *ngIf="!juros.valid && juros.touched" class="alert alert-danger" role="alert">
+                    Informe a taxa de juros.
+                </div>
+            </div>
+            <a class="btn btn-dark" href="principal-gerente">Voltar</a>&nbsp;
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Adicionar</button>
+        </form>
+    </div>

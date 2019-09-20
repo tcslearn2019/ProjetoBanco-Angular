@@ -1,5 +1,6 @@
+<particles [style]="loginStyle" [width]="width" [height]="height" [params]="parLogin"></particles>
 <div class="wrapper fadeInDown">
-  <div id="formContent">    
+  <div id="formContent">
     <br>
     <form (ngSubmit)="enviarLogin()">
       <input type="text" [(ngModel)]="login.login" name="login" placeholder="Login" ui-br-cpf-mask required>

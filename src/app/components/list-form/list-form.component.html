@@ -3,10 +3,9 @@
 <div class="container">  
     <br>
     <br>  
-    <table class="table table-striped table-hover">
-        <br>
+    <table class="table table-striped table-hover mt-4">
         <thead>
-            <th scope="row">Id</th>
+            <!--<th scope="row">Id</th>-->
             <th scope="row">Nome</th>
             <th scope="row">Sobrenome</th>
             <th scope="row">CPF</th>
@@ -17,7 +16,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of users">
-                    <td>{{user.id}}</td>
+                    <!--<td>{{user.id}}</td>-->
                     <td>{{user.fname}}</td>
                     <td>{{user.lname}}</td>    
                     <td>{{user.cpf}}</td>
@@ -29,6 +28,7 @@
                     <button class="btn btn-danger" (click)="deleteUser(user)">Excluir</button>
                 </td>
             </tr>
-        </tbody>
+        </tbody>        
     </table>
+    <button type="submit" class="btn btn-dark" href="principal-gerente">Voltar</button>
 </div>

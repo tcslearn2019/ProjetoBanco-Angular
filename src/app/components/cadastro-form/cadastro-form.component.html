@@ -1,50 +1,80 @@
 <app-header-gerente></app-header-gerente>
 <div class="container">
-    <form name="userform" (ngSubmit) = "processForm()" novalidate>
+    <form #form="ngForm" (ngSubmit)="processForm()" class="needs-validation" novalidate>
         <br>
         <br>
         <div class="form-group">
             <br>
             <label for="fname">Nome</label>
-            <input type="text"  name="fname" class="form-control" [(ngModel)]="user.fname" placeholder="Nome" maxlength="20" required>
+            <input type="text"  name="fname" class="form-control" [(ngModel)]="user.fname" placeholder="Nome"
+            required #fname="ngModel">
+            <div *ngIf="!fname.valid && fname.touched" class="alert alert-danger" role="alert">
+                Nome obrigatório.
+            </div>
         </div>
         <div class="form-group">
             <label for="lname">Sobrenome</label>
-            <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" placeholder="Sobrenome" maxlength="20" required>
+            <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" placeholder="Sobrenome"
+            required #lname="ngModel">
+            <div *ngIf="!lname.valid && lname.touched" class="alert alert-danger" role="alert">
+                Sobrenome obrigatório.
+            </div>
         </div>
         <div class="form-group">
             <label for="cpf">CPF</label>
-            <input type="number" name="cpf" class="form-control" [(ngModel)]="user.cpf" placeholder="CPF" required>
+            <input type="text" name="cpf" class="form-control" [(ngModel)]="user.cpf" placeholder="CPF"
+            required #cpf="ngModel" minlength="11" maxlength="14" mask="000.000.000-00">
+            <div *ngIf="!cpf.valid && cpf.touched" class="alert alert-danger" role="alert">
+                Informe seu CPF.
+            </div>
         </div>
         <div class="form-group">
             <label for="rg">RG</label>
-            <input type="number" name="rg" class="form-control" [(ngModel)]="user.rg" placeholder="RG" minlength="9" maxlength="9">
+            <input type="text" name="rg" class="form-control" [(ngModel)]="user.rg"
+            placeholder="RG" minlength="9" maxlength="12" mask="00.000.000-0" required #rg="ngModel">
+            <div *ngIf="!rg.valid && rg.touched" class="alert alert-danger" role="alert">
+                Informe seu RG.
+            </div>
         </div>
         <div class="form-group">
             <label for="tel">Telefone</label>
-            <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" placeholder="Telefone" required>
+            <input type="tel" name="tel" class="form-control" [(ngModel)]="user.tel" placeholder="Telefone"
+            minlength="10" maxlength="15" mask="(00) 00000-0000"
+            required #tel="ngModel">
+            <div *ngIf="!tel.valid && tel.touched" class="alert alert-danger" role="alert">
+                Informe seu telefone.
+            </div>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email"  name="email" class="form-control"  [(ngModel)]="user.email" placeholder="Email" data-error="Por favor, informe um e-mail correto." required>
-            <div class="help-block with-errors"></div>
+            <input type="email"  name="email" class="form-control" [(ngModel)]="user.email" placeholder="nome@email.com"
+            data-error="Por favor, informe um e-mail correto."
+            required email #email="ngModel">
+            <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
+                Email inválido.
+            </div>
         </div>
         <div class="form-group">
             <label for="pwd">Senha</label>
-            <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd" placeholder="Senha" data-minlength="6" required>
-            <span class="help-block">Mínimo de seis (6) digitos.</span>
-        </div>        
-        <div class="form-group">
-            <label for="confirm-pwd">Confirme a Senha</label>
-            <input type="password" class="form-control" name="confirm-pwd" placeholder="Confirme sua Senha"
-            data-match="#pwd" data-match-error="Atenção! As senhas não estão iguais."
-            required>
-            <span class="help-block">Deve ser igual a senha informada acima.</span>
-            <div class="help-block with-errors"></div>
+            <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd"
+            placeholder="Senha" data-minlength="6" required #pwd="ngModel">
+            <span *ngIf="!pwd.valid && pwd.touched" class="error">Mínimo de seis (6) digitos.</span>
+            <div *ngIf="!pwd.valid && pwd.touched" class="alert alert-danger" role="alert">
+                Informe uma senha correta.
+            </div>
+
+            <!--<div class="form-group">
+                <label for="pwd2">Confirmar senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
+                data-match="#pwd" data-match-error="Atenção! As senhas não estão iguais."
+                [(ngModel)]="user.pwd2" required #pwd2="ngModel">
+                <span *ngIf="user.pwd != user.pwd2" class="alert alert-danger">Deve ser igual a senha informada acima.
+                </span>
+            </div>-->
         </div>
         <div class="form-group">
             <a class="btn btn-dark" href="principal-gerente">Voltar</a>&nbsp;
-            <button type="submit" class="btn btn-primary">Cadastrar</button>                
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Cadastrar</button>                
         </div>
     </form>
 </div>

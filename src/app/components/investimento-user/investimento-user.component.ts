@@ -23,4 +23,8 @@ export class InvestimentoUserComponent implements OnInit {
     })
   }
 
+  onSubmit(form){
+    console.log(form);
+  }
+
 }
