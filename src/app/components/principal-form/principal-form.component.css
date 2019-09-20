@@ -8,7 +8,7 @@ section {
 a {
     display: flex;
     background: white;
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 3rem 1rem 3rem 1rem;
     border-radius: 0.3rem;
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
     margin-bottom: 2rem;

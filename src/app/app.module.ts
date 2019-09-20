@@ -41,6 +41,8 @@ const appRoutes:Routes = [
   {path: 'realizar-emprestimo', component: RealizarEmprestimoComponent},
   {path: 'ver-emprestimos', component: VerEmprestimoComponent},
   {path: 'realizar-investimento', component: RealizarInvestimentoComponent},
+  {path: 'ver-investimento', component: RealizarInvestimentoComponent},
+  {path: 'extrato', component: ExtratoComponent},
 ];
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
