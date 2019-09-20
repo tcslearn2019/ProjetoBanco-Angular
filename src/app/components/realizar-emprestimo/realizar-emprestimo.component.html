@@ -1,12 +1,12 @@
 <app-header></app-header>
 <div class="container">
-    <form>
+    <form (ngSubmit)="MandarForm()">
         <div class="form-group">
             <br>
             <br>
             <br>
             <label for="valor">Valor</label>
-            <input type="number" class="form-control" id="valor" placeholder="Valor" required>
+            <input type="number" name="valor" [(ngModel)]="loan.valor" class="form-control"  placeholder="Valor" required>
         </div>
         <a class="btn btn-dark" href="emprestimo-user">Voltar</a>&nbsp;
         <button type="submit" class="btn btn-primary">Realizar Emprestimo</button>

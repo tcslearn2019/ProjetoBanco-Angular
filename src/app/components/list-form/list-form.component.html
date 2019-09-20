@@ -12,6 +12,7 @@
             <th scope="row">Telefone</th>
             <th scope="row">Email</th>
             <th scope="row">Senha</th>
+            <th scope="row">Rg</th>
             <th scope="row">Ações</th>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@
                     <td>{{user.tel}}</td> 
                     <td>{{user.email}}</td>            
                     <td>{{user.pwd}}</td>      
+                    <td>{{user.rg}}</td>   
                 <td>
                     <button class="btn btn-primary" (click)="updateUser(user)">Editar</button>&nbsp;
                     <button class="btn btn-danger" (click)="deleteUser(user)">Excluir</button>

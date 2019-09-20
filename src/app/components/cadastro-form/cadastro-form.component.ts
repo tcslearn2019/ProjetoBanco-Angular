@@ -15,7 +15,6 @@ export class CadastroFormComponent implements OnInit {
 
   ngOnInit() {  
     this.user=this._userService.getter();
-    //this.user=new User;  
   }
 
   onSubmit(form){
