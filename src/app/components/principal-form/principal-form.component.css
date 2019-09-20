@@ -50,3 +50,11 @@ a:hover {
 .list-group-item:last-child{
     margin-bottom: 32px;
 }
+
+h5, .saldo{
+    color: white!important
+}
+
+.saldo {
+    text-align: left;
+}
