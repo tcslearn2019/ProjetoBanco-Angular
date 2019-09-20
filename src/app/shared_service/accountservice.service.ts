@@ -34,6 +34,10 @@ export class AccountserviceService {
     return this._http.put(this.baseUrl + '/account/', JSON.stringify(type), this.options).pipe(map((response: Response) => response.json()));
   }
 
+  returnBalance(idUsuario:Number){
+    return this._http.post(this.baseUrl + '/accountbalance/', JSON.stringify(idUsuario), this.options).pipe(map((response: Response) => response.json()));
+  }
+
   errorHandler(error:Response){
     return Observable.throw(error || "Conection Error");
   }
