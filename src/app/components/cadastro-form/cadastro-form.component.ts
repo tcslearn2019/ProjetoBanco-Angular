@@ -25,6 +25,7 @@ export class CadastroFormComponent implements OnInit {
   processForm(){
     if(this.user.id==undefined){
       this._userService.createUser(this.user).subscribe((user)=>{
+        alerta();
         this._router.navigate(['/principal-gerente']);
       },(error)=>{
         console.log(error);
@@ -36,6 +37,10 @@ export class CadastroFormComponent implements OnInit {
       },(error)=>{
         console.log(error);
       });
+    }
+
+    function alerta(){
+      alert("Cadastro Realizado com sucesso");
     }
   }
 }
