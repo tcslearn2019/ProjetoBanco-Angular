@@ -40,4 +40,9 @@ export class PrincipalFormComponent implements OnInit {
     this._router.navigate(['/emprestimo-user']);
   }
 
+  generateLoan(){
+    this._router.navigate(['/extrato']);
+  }
+
+
 }

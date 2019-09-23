@@ -17,15 +17,11 @@ export class TransferenciasFormComponent implements OnInit {
 
   ngOnInit() {
     this.transferencia = new Transferencia();
-    console.log(this._userService);
   }
 
   Enviar(){
     this.transferencia.idOrigem = this._userService.getter().id.toString();
-    console.log(this.transferencia);
     this._transfService.sendInformation(this.transferencia).subscribe((transf)=>{  
-      console.log(this.transferencia);
-      console.log(transf);
       this._router.navigate(['/principal']);
     })
   }

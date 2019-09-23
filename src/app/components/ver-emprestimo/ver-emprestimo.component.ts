@@ -3,7 +3,6 @@ import {Router} from '@angular/router'
 import {LoanserviceService} from '../../shared_service/loanservice.service';
 import {UserService} from '../../shared_service/user.service';
 import {Loan} from '../../loan';
-import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-ver-emprestimo',
@@ -16,15 +15,14 @@ export class VerEmprestimoComponent implements OnInit {
   constructor(private _loanService:LoanserviceService, private _router:Router, private _userService:UserService) { }
 
   ngOnInit() {
-    this._loanService.getUsers().subscribe((listloan)=>{
-      console.log(listloan)
-      this.loans = listloan;
-    });
+    this.loans = this._loanService.getter();
 
-    this._loanService.getUserById(this._userService.getter().id).subscribe((listloan)=>{
-      this.loans = listloan;
-    });
+  }
 
+  payLoan(loan){
+    this._loanService.payLoan(loan.idEmprestimo).subscribe((user)=>{     
+      this._router.navigate(['/principal']);
+    }) 
   }
 
 }
