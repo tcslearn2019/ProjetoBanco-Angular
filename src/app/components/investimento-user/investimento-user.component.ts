@@ -15,16 +15,14 @@ export class InvestimentoUserComponent implements OnInit {
   constructor(private _investimentoService:TipoInvestimento, private _router:Router) { }
 
   ngOnInit() {
-    this._investimentoService.getUsers().subscribe((investimento)=>{
-      console.log(investimento);
-      this.investimento=investimento;
-    },(error)=>{
-      console.log(error);
-    })
+    
   }
 
-  onSubmit(form){
-    console.log(form);
+  realizarInvestimentos(){
+    this._router.navigate(['/realizar-investimento']);
   }
 
+  verInvestimentos(){
+    this._router.navigate(['/ver-investimento']);
+  }
 }

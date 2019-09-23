@@ -24,15 +24,15 @@
                 <a class="nav-link" (click)="routerTransf()">Transferências</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="extrato">Extrato</a>
+                <a class="nav-link" (click)="routerExtrato()">Extrato</a>
             </li>
         </ul>
        <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
-                <a class="nav-link">Agência</a>
+                <a class="nav-link">Agência: {{acc.agencia}}</a>
             <li>           
             <li class="nav-item">
-                <a class="nav-link">Conta</a>
+                <a class="nav-link">Conta: {{acc.conta}}</a>
             </li>
         </ul>
         <br><a class="sair" href="">Sair</a>

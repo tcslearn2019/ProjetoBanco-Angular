@@ -44,5 +44,9 @@ export class PrincipalFormComponent implements OnInit {
     this._router.navigate(['/extrato']);
   }
 
+  newInvestiment(){
+    this._router.navigate(['/investimento-user']);
+  }
+
 
 }
