@@ -24,6 +24,8 @@ import { RealizarEmprestimoComponent } from './components/realizar-emprestimo/re
 import { VerEmprestimoComponent } from './components/ver-emprestimo/ver-emprestimo.component';
 import { RealizarInvestimentoComponent } from './components/realizar-investimento/realizar-investimento.component';
 import { VerInvestimentoComponent } from './components/ver-investimento/ver-investimento.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { OperacaoInvestimentoComponent } from './components/operacao-investimento/operacao-investimento.component';
 
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
@@ -40,8 +42,9 @@ const appRoutes:Routes = [
   {path: 'realizar-emprestimo', component: RealizarEmprestimoComponent},
   {path: 'ver-emprestimos', component: VerEmprestimoComponent},
   {path: 'realizar-investimento', component: RealizarInvestimentoComponent},
-  {path: 'ver-investimento', component: RealizarInvestimentoComponent},
+  {path: 'ver-investimento', component: VerInvestimentoComponent},
   {path: 'extrato', component: ExtratoComponent},
+  {path: 'resgate-adicione', component: OperacaoInvestimentoComponent}
 ];
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
@@ -67,7 +70,9 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     RealizarEmprestimoComponent,
     VerEmprestimoComponent,
     RealizarInvestimentoComponent,
-    VerInvestimentoComponent
+    VerInvestimentoComponent,
+    FooterComponent,
+    OperacaoInvestimentoComponent
   ],
   imports: [
     BrowserModule,
