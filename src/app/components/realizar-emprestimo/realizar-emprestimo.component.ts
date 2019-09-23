@@ -25,7 +25,7 @@ export class RealizarEmprestimoComponent implements OnInit {
   }
 
   redirect(){
-    this._router.navigate(['/principal']);
+    this._router.navigate(['/realizar-emprestimo']);
   }
 
 }

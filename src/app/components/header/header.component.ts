@@ -29,6 +29,11 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/transferencia']);
   }
 
+  routerExtrato(){  
+    this._router.navigate(['/extrato']);
+  }
+
+
 
 
 }
