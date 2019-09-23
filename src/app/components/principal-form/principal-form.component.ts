@@ -33,11 +33,11 @@ export class PrincipalFormComponent implements OnInit {
 
 
   newTransfer(){
-
     this._router.navigate(['/transferencia']);
   }
 
-
-
+  newLoan(){
+    this._router.navigate(['/emprestimo-user']);
+  }
 
 }

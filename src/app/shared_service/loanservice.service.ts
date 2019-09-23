@@ -15,23 +15,27 @@ export class LoanserviceService {
   constructor(private _http:Http) { }
 
   getUsers(){
-    return this._http.get(this.baseUrl + '/emprestimos', this.options).pipe(map((response: Response) => response.json()));
+    return this._http.get(this.baseUrl + '/loan', this.options).pipe(map((response: Response) => response.json()));
   }
 
   getUser(id:Number){
-    return this._http.get(this.baseUrl + '/emprestimos/' + id, this.options).pipe(map((response: Response) => response.json()));
+    return this._http.get(this.baseUrl + '/loan/' + id, this.options).pipe(map((response: Response) => response.json()));
   }
 
   deleteUser(id:Number){
-    return this._http.delete(this.baseUrl + '/emprestimos/' + id, this.options).pipe(map((response: Response) => response.json()));
+    return this._http.delete(this.baseUrl + '/loan/' + id, this.options).pipe(map((response: Response) => response.json()));
   }
 
-  createUser(user:Account){
-    return this._http.post(this.baseUrl + '/emprestimos/', JSON.stringify(user), this.options).pipe(map((response: Response) => response.json()));
+  createUser(loan:Loan){
+    return this._http.post(this.baseUrl + '/loan/', JSON.stringify(loan), this.options).pipe(map((response: Response) => response.json()));
   }
 
-  updateUser(type:Account){
-    return this._http.put(this.baseUrl + '/emprestimos/', JSON.stringify(type), this.options).pipe(map((response: Response) => response.json()));
+  updateUser(type:Loan){
+    return this._http.put(this.baseUrl + '/loan/', JSON.stringify(type), this.options).pipe(map((response: Response) => response.json()));
+  }
+
+  getUserById(id:Number){
+    return this._http.post(this.baseUrl + '/loanpersonal/', JSON.stringify(id), this.options).pipe(map((response: Response) => response.json()));
   }
 
   errorHandler(error:Response){

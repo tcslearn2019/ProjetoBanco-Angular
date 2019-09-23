@@ -1,0 +1,26 @@
+<app-header></app-header>
+<br>
+<div class="container">  
+    <br>
+    <br>  
+    <table class="table table-striped table-hover">
+        <br>
+        <thead>
+            <th scope="row">Valor Emprestimo</th>
+            <th scope="row">Juros</th>
+            <th scope="row">Valor Pagar</th>
+            <th scope="row">Data Emprestimo</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let loan of loans">
+                    <td>{{loan.valorEmprestimo}}</td>
+                    <td>{{loan.juros}}</td>
+                    <td>{{loan.valorPagar}}</td>
+                    <td>{{loan.dataEmprestimo}}</td>
+                <td>
+                    <button class="btn btn-primary">Pagar</button>&nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
