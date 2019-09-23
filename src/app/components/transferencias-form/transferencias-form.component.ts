@@ -20,6 +20,10 @@ export class TransferenciasFormComponent implements OnInit {
     console.log(this._userService);
   }
 
+  onSubmit(form){
+    console.log(form);
+  }
+
   Enviar(){
     this.transferencia.idOrigem = this._userService.getter().id.toString();
     console.log(this.transferencia);
