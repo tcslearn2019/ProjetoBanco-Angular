@@ -9,17 +9,20 @@
     <div class="collapse navbar-collapse" id="conteudoNavbar">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="principal-gerente">Home
+            <a class="nav-link" (click)="routerHome()">Home
             <span class="sr-only">(página atual)</span></a>
         </li>
             <li class="nav-item">
-                <a class="nav-link" href="cadastro">Cadastro</a>
+                <a class="nav-link" (click)="routerCadastro()">Cadastro</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="investimento-new">Investimentos</a>
+                <a class="nav-link" (click)="routerInvestimento()">Investimentos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="lista-clientes">Listagem</a>
+                <a class="nav-link" (click)="routerListagemCliente()">Listagem clientes</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" (click)="routerListagemInvestimento()">Listagem investimentos</a>
             </li>
     </ul>
     </div>
