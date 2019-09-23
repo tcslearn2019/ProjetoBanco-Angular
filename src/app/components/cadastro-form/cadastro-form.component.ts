@@ -9,17 +9,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./cadastro-form.component.css']
 })
 export class CadastroFormComponent implements OnInit {
-  private user:User;
+  user:User;
 
   constructor(private _userService:UserService, private _router:Router) { }
 
   ngOnInit() {  
-    this.user=this._userService.getter();
-    //this.user=new User;  
-  }
-
-  onSubmit(form){
-    console.log(form);
+    this.user= this._userService.getter();
+    this.user = new User;
   }
 
   processForm(){
@@ -37,5 +33,12 @@ export class CadastroFormComponent implements OnInit {
         console.log(error);
       });
     }
+  }
+
+  createUser() {
+    this._userService.createUser(this.user).subscribe((user) =>{
+    this._userService.setter(user);
+    this._router.navigate(['/lista-clientes']);
+    })
   }
 }
