@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="container">
-    <form>
+    <form #form="ngForm" (ngSubmit)="processForm()" class="needs-validation" novalidate>
         <br>
         <br>
         <br>
@@ -14,9 +14,10 @@
         </div>
         <div class="form-group">
             <label for="valor">Valor</label>
-            <input type="number" class="form-control" id="valor" placeholder="Valor" required>
+            <input type="number" class="form-control" id="valor" placeholder="Valor"
+            required>
         </div>
         <a class="btn btn-dark" href="investimento-new">Voltar</a>&nbsp;
-        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Adicionar</button>
     </form>    
 </div>

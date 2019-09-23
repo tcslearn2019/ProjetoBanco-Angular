@@ -12,4 +12,9 @@ export class RealizarInvestimentoComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(form){
+    console.log(form);
+  }
+
+
 }
