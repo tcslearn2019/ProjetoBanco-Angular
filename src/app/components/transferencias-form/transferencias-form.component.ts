@@ -28,7 +28,14 @@ export class TransferenciasFormComponent implements OnInit {
   Enviar() {
     this.transferencia.idOrigem = this._userService.getter().id.toString();
     this._transfService.sendInformation(this.transferencia).subscribe((transf) => {
-      this._router.navigate(['/principal']);
+      if(transf == true){
+        alert("Transferência Realizada com sucesso.");
+        this._router.navigate(['/principal']);
+        console.log(transf);
+      }else {
+        alert("Dados da Conta Destino estão incorretos ou seu saldo é insuficiente.");
+        console.log(transf);
+      }
     })
   }
 

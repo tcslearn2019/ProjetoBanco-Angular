@@ -32,7 +32,14 @@ export class RealizarInvestimentoComponent implements OnInit {
   updateUser(Investimento) {
     Investimento['iduser'] = this._userService.getter().id
     this._investimentoService.createInvestimento(Investimento).subscribe((retorno) => {
-      console.log(retorno)
+      if(retorno == false){
+        alert("Saldo Insuficiente para Investir.");
+        this._router.navigate(['/realizar-investimento']);
+      }else {
+        alert("Investimento Realizado com sucesso");
+        this._router.navigate(['/realizar-investimento']);
+        console.log(retorno)
+      }
     }, (error) => {
       console.log(error);
     })
@@ -41,5 +48,4 @@ export class RealizarInvestimentoComponent implements OnInit {
   voltarPrincipal() {
     this._router.navigate(['/principal']);
   }
-
 }

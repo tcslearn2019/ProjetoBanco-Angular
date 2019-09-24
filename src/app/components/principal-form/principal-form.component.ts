@@ -22,15 +22,15 @@ export class PrincipalFormComponent implements OnInit {
     }
     
     else{
-    this.user=this._userService.getter();
-    this._accounterService.returnBalance(this.user.id).subscribe((acc)=>{
+      this.user=this._userService.getter();
+      this._accounterService.returnBalance(this.user.id).subscribe((acc)=>{
       this.acc=acc;
+      this.acc.saldo = Number(this.acc.saldo.toFixed(2));
     },(error)=>{
       console.log(error);
     })   
     }
   }
-
 
   newTransfer(){
     this._router.navigate(['/transferencia']);

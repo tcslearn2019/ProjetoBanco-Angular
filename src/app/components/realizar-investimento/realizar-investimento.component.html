@@ -18,7 +18,7 @@
                         <input type="number" name="valor"  [(ngModel)]="investimento.valor" class="form-control"  placeholder="Valor a aplicar" required>
                         </td> 
                         <td>     
-                        <button class="btn btn-primary" (click)="updateUser(investimento)">Aplicar</button>&nbsp;
+                        <button class="btn btn-primary" (click)="updateUser(investimento)" ngclick="alerta()">Aplicar</button>&nbsp;
                     </td>
                 </tr>
             </tbody>        

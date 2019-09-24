@@ -26,6 +26,11 @@ export class VerEmprestimoComponent implements OnInit {
 
   payLoan(loan) {
     this._loanService.payLoan(loan.idEmprestimo).subscribe((user) => {
+      if(user == false){
+        alert("Saldo Insuficiente.");
+      }else{
+        alert("Emprestimo Pago com sucesso.")
+      }
       this._router.navigate(['/principal']);
     })
   }
