@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {TipoInvestimento} from '../../shared_service/tipoinvestimento.service';
-import {Tipoinvestimento} from '../../tipoinvestimento';
-import {Router} from '@angular/router';
+import { TipoInvestimento } from '../../shared_service/tipoinvestimento.service';
+import { Tipoinvestimento } from '../../tipoinvestimento';
+import { Router } from '@angular/router';
+import { UserService } from '../../shared_service/user.service';
 
 @Component({
   selector: 'app-investimento-new',
@@ -9,30 +10,40 @@ import {Router} from '@angular/router';
   styleUrls: ['./investimento-new.component.css']
 })
 export class InvestimentoNewComponent implements OnInit {
-  private tipoInvest:Tipoinvestimento;
+  private tipoInvest: Tipoinvestimento;
 
-  constructor(private _investmentService:TipoInvestimento, private _router:Router) { }
+  constructor(private _userService: UserService, private _investmentService: TipoInvestimento, private _router: Router) { }
 
   ngOnInit() {
-    this.tipoInvest=this._investmentService.getter();
+    if (this._userService.getter() == null) {
+      this._router.navigate(['/']);
+    }
+
+    else {
+      this.tipoInvest = this._investmentService.getter();
+    }
   }
 
-  processForm(){
-    if(this.tipoInvest.idinv==undefined){
-      this._investmentService.createUser(this.tipoInvest).subscribe((tipoInvest)=>{
+  processForm() {
+    if (this.tipoInvest.idinv == undefined) {
+      this._investmentService.createUser(this.tipoInvest).subscribe((tipoInvest) => {
         console.log(tipoInvest);
         this._router.navigate(['/principal-gerente']);
-      },(error)=>{
+      }, (error) => {
         console.log(error);
       });
-    }else{
-      this._investmentService.updateUser(this.tipoInvest).subscribe((tipoInvest)=>{
+    } else {
+      this._investmentService.updateUser(this.tipoInvest).subscribe((tipoInvest) => {
         console.log(tipoInvest);
         this._router.navigate(['/principal-gerente']);
-      },(error)=>{
+      }, (error) => {
         console.log(error);
       });
     }
+  }
+
+  voltarPrincipal() {
+    this._router.navigate(['/principal-gerente']);
   }
 
 }

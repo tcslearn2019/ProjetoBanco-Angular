@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TipoInvestimento} from '../../shared_service/tipoinvestimento.service';
 import {Tipoinvestimento} from '../../tipoinvestimento';
 import {Router} from '@angular/router'
+import {UserService} from '../../shared_service/user.service';
 
 
 @Component({
@@ -12,10 +13,12 @@ import {Router} from '@angular/router'
 export class InvestimentoUserComponent implements OnInit {
   private investimento:Tipoinvestimento[];
 
-  constructor(private _investimentoService:TipoInvestimento, private _router:Router) { }
+  constructor(private _userService:UserService,private _investimentoService:TipoInvestimento, private _router:Router) { }
 
   ngOnInit() {
-    
+    if (this._userService.getter() == null) {
+      this._router.navigate(['/']);
+    }
   }
 
   realizarInvestimentos(){
