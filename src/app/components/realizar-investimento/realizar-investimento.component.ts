@@ -3,6 +3,7 @@ import {TipoInvestimento} from '../../shared_service/tipoinvestimento.service';
 import {Tipoinvestimento} from '../../tipoinvestimento';
 import {InvestimentosserviceService} from '../../shared_service/investimentosservice.service';
 import {Router} from '@angular/router'
+import {UserService} from '../../shared_service/user.service';
 
 @Component({
   selector: 'app-realizar-investimento',
@@ -12,7 +13,7 @@ import {Router} from '@angular/router'
 export class RealizarInvestimentoComponent implements OnInit {
   private tipoInvestimento:Tipoinvestimento[];
 
-  constructor(private _investimentoService:InvestimentosserviceService,private _tipoInvestimentoService:TipoInvestimento, private _router:Router) { }
+  constructor(private _userService:UserService,private _investimentoService:InvestimentosserviceService,private _tipoInvestimentoService:TipoInvestimento, private _router:Router) { }
 
   ngOnInit() {
     this._tipoInvestimentoService.getUsers().subscribe((tipoInvestimento)=>{
@@ -22,13 +23,17 @@ export class RealizarInvestimentoComponent implements OnInit {
   })
   }
 
-  updateUser(tipoInvestimento){
-    this._investimentoService.createInvestimento(tipoInvestimento).subscribe((retorno) => {
-      console.log(tipoInvestimento)
-      console.log(retorno);
+  updateUser(Investimento){
+    Investimento['iduser'] = this._userService.getter().id
+    this._investimentoService.createInvestimento(Investimento).subscribe((retorno) => {
+      console.log(retorno)
     },(error)=>{
       console.log(error);
     })
+  }
+
+  voltarPrincipal(){
+    this._router.navigate(['/principal']);
   }
 
 }

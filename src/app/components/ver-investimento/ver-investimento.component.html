@@ -6,17 +6,19 @@
         <br>
         <thead>
             <th scope="row">Investimento</th>
-            <th scope="row">Valor</th>
+            <th scope="row">Data investimento</th>
+            <th scope="row">Valor investido</th>
+            <th scope="row">Valor atual</th>
             <th scope="row">Ações</th>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users">
-                <td>teste</td>
-                <td>teste</td>
-                <td>teste</td>
+            <tr *ngFor="let investimento of investimentos">
+                <td>{{investimento.fkIdTipoInvestimento.nome}}</td>
+                <td>{{investimento.data}}</td>
+                <td>{{investimento.valor}}</td>
+                <td>{{investimento.valorTemp}}</td>
                 <td>
-                    <button class="btn btn-success" href="resgatar-adicionar">Resgatar</button>&nbsp;
-                    <button class="btn btn-primary" href="">Adicionar</button>
+                    <button class="btn btn-success" (click)="Resgatar(investimento)">Resgatar</button>
                 </td>
             </tr>
         </tbody>

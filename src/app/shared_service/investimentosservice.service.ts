@@ -34,6 +34,18 @@ export class InvestimentosserviceService {
     return this._http.post(this.baseUrl + '/investimentnew/', JSON.stringify(investimento), this.options).pipe(map((response: Response) => response.json()));
   }
 
+  getInvestimentoById(id:Number){
+    return this._http.post(this.baseUrl + '/investimentbyid/', JSON.stringify(id), this.options).pipe(map((response: Response) => response.json()));
+  }
+
+  getInvestimentoByIdResgatados(id:Number){
+    return this._http.post(this.baseUrl + '/investimentbyidresgatados/', JSON.stringify(id), this.options).pipe(map((response: Response) => response.json()));
+  }
+
+  resgateInvestimentoById(investimento:Investimento){
+    return this._http.post(this.baseUrl + '/resgateinvestimentbyid/', JSON.stringify(investimento), this.options).pipe(map((response: Response) => response.json()));
+  }
+
   errorHandler(error:Response){
     return Observable.throw(error || "Conection Error");
   }

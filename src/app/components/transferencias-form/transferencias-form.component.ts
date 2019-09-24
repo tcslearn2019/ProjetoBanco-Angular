@@ -26,6 +26,10 @@ export class TransferenciasFormComponent implements OnInit {
     })
   }
 
+  voltarPrincipal(){
+    this._router.navigate(['/principal']);
+  }
+
   
 
 }
