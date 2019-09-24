@@ -47,7 +47,7 @@ export class ExtratoComponent implements OnInit {
       });
 
       this._investimentoService.getInvestimentoByIdResgatados(this._userService.getter().id).subscribe((investimentosResgatados) => {
-        this.investimentosResgatados = investimentosResgatados;
+        this.investimentosResgatados = investimentosResgatados;       
       });
     }
   }

@@ -13,9 +13,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let loan of loans">
-                    <td>{{loan.valorEmprestimo}}</td>
-                    <td>{{loan.juros}}</td>
-                    <td>{{loan.valorPagar}}</td>
+                    <td>{{loan.valorEmprestimo | number: '3.1-2'}}</td>
+                    <td>{{loan.juros | number: '3.1-2'}}</td>
+                    <td>{{loan.valorPagar | number: '3.1-2'}}</td>
                     <td>{{loan.dataEmprestimo}}</td>
                 <td>
                     <button class="btn btn-primary" (click)="payLoan(loan)">Pagar</button>&nbsp;

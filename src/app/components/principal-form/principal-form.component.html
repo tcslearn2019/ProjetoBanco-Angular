@@ -16,7 +16,7 @@
                     <h5 class="mb-1">Saldo </h5>
                 </div>
                 <div class="saldo">                    
-                    <p>R$ {{acc.saldo}}</p>
+                    <p>R$ {{acc.saldo | number: '3.1-2'}}</p>
                 </div>
             </a>
             <a (click)="newTransfer()"  class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active text-white">
