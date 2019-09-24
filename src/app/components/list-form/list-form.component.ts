@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../shared_service/user.service';
-import {User} from '../../user';
-import {Router} from '@angular/router'
+import { UserService } from '../../shared_service/user.service';
+import { User } from '../../user';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-list-form',
@@ -9,30 +9,40 @@ import {Router} from '@angular/router'
   styleUrls: ['./list-form.component.css']
 })
 export class ListFormComponent implements OnInit {
-  private users:User[];
+  private users: User[];
 
-  constructor(private _userService:UserService, private _router:Router) { }
+  constructor(private _userService: UserService, private _router: Router) { }
 
   ngOnInit() {
-    this._userService.getUsers().subscribe((users)=>{
-      console.log(users);
-      this.users=users;
-    },(error)=>{
+    if (this._userService.getter() == null) {
+      this._router.navigate(['/']);
+    }
+
+    else {
+      this._userService.getUsers().subscribe((users) => {
+        console.log(users);
+        this.users = users;
+      }, (error) => {
+        console.log(error);
+      })
+    }
+  }
+
+  deleteUser(user) {
+    this._userService.deleteUser(user.id).subscribe((data) => {
+      this.users.splice(this.users.indexOf(user), 1);
+    }, (error) => {
       console.log(error);
     })
   }
 
-  deleteUser(user){
-    this._userService.deleteUser(user.id).subscribe((data)=>{
-      this.users.splice(this.users.indexOf(user),1);
-    },(error)=>{
-      console.log(error);
-    })
-  }
-
-  updateUser(user){
+  updateUser(user) {
     this._userService.setter(user);
     this._router.navigate(['/cadastro']);
+  }
+
+  voltarPrincipal(){
+    this._router.navigate(['/principal-gerente']);
   }
 
 

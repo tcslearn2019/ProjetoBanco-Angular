@@ -14,13 +14,23 @@ export class CadastroFormComponent implements OnInit {
   constructor(private _userService:UserService, private _router:Router) { }
 
   ngOnInit() {  
-    this.user= this._userService.getter();
-    this.user = new User;
+    if(this._userService.getter() == null){
+      this._router.navigate(['/']);   
+    }
+    
+    else{
+      this.user=this._userService.getter();
+    }
+  }
+
+  onSubmit(form){
+    console.log(form);
   }
 
   processForm(){
     if(this.user.id==undefined){
       this._userService.createUser(this.user).subscribe((user)=>{
+        alerta();
         this._router.navigate(['/principal-gerente']);
       },(error)=>{
         console.log(error);
@@ -33,12 +43,14 @@ export class CadastroFormComponent implements OnInit {
         console.log(error);
       });
     }
+
+    function alerta(){
+      alert("Cadastro Realizado com sucesso");
+    }
   }
 
-  createUser() {
-    this._userService.createUser(this.user).subscribe((user) =>{
-    this._userService.setter(user);
-    this._router.navigate(['/lista-clientes']);
-    })
+  voltarPrincipal(){
+    this._router.navigate(['/principal-gerente']);
   }
+
 }

@@ -1,28 +1,40 @@
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="principal">
-            <img src="assets/imagens/LogoSample_ByTailorBrands.jpg"
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" (click)="routerHome()">
+        <img src="assets/imagens/LogoSample_ByTailorBrands.jpg"
             width="60" height="30" class="d-inline-block align-top">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="conteudoNavbar">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+          
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="principal">Home
+                <a class="nav-link" (click)="routerHome()">Home
                 <span class="sr-only">(página atual)</span>                
             </a>                
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="emprestimo-user">Empréstimos</a>
+                <a class="nav-link"(click)="routerEmprestimo()">Empréstimos</a>
             </li>
              <li class="nav-item">
-                 <a class="nav-link" href="investimento-user">Investimentos</a>
+                 <a class="nav-link" (click)="routerInvestimento()">Investimentos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="transferencia">Transferências</a>
+                <a class="nav-link" (click)="routerTransf()">Transferências</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="routerExtrato()">Extrato</a>
             </li>
         </ul>
-        <a class="sair" href="">Sair</a>
-        </div>
-    </nav>
+       <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link">Agência: {{acc.agencia}}</a>
+            <li>           
+            <li class="nav-item">
+                <a class="nav-link">Conta: {{acc.conta}}</a>
+            </li>
+        </ul>
+        <br><a class="sair" href="">Sair</a>
+    </div>
+</nav>

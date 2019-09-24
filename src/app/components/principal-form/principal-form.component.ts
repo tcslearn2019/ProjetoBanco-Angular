@@ -18,7 +18,7 @@ export class PrincipalFormComponent implements OnInit {
   ngOnInit() {
     this.acc = new Account();
     if(this._userService.getter() == null){
-      this._router.navigate(['/principal']);
+      this._router.navigate(['/']);   
     }
     
     else{
@@ -33,11 +33,20 @@ export class PrincipalFormComponent implements OnInit {
 
 
   newTransfer(){
-
     this._router.navigate(['/transferencia']);
   }
 
+  newLoan(){
+    this._router.navigate(['/emprestimo-user']);
+  }
 
+  generateLoan(){
+    this._router.navigate(['/extrato']);
+  }
+
+  newInvestiment(){
+    this._router.navigate(['/investimento-user']);
+  }
 
 
 }

@@ -3,16 +3,18 @@
     <form ng-submit="processForm()">   
         <div class="form-group">
             <label for="fname">Nome</label>
-            <input type="text" name="fname" class="form-control" ngOnInit="User.fname" placeholder="Nome">
-            <div class="form-group">
-            </div>  
-            <div class="form-group">
-                <label for="lname">Sobrenome</label>
-                <input type="text" name="lname" class="form-control" ngOnInit="User.lname" placeholder="Sobrenome">
+            <input type="text"  name="fname" class="form-control" [(ngModel)]="user.fname" placeholder="Nome"
+            required #fname="ngModel" pattern="[a-zA-Z\s]+">
+            <div *ngIf="!fname.valid && fname.touched" class="alert alert-danger" role="alert">
+                Informe seu nome e somente letras.
             </div>
-            <div class="form-group">
-                <label for="cpf">CPF</label>
-                <input type="number" name="cpf" class="form-control" ngOnInit="user.cpf" placeholder="CPF">
+        </div>
+        <div class="form-group">
+            <label for="lname">Sobrenome</label>
+            <input type="text" name="lname" class="form-control" [(ngModel)]="user.lname" placeholder="Sobrenome"
+            required #lname="ngModel" pattern="[a-zA-Z]+">
+            <div *ngIf="!lname.valid && lname.touched" class="alert alert-danger" role="alert">
+                Informe seu sobrenome.
             </div>
             <div class="form-group">
                 <label for="tel">Telefone</label>
@@ -30,17 +32,36 @@
                     data-minlength="6" required>
                 <span class="help-block">Mínimo de seis (6) digitos.</span>
             </div>
-            <div class="form-group">
-                <label for="conf-pwd">Confirmar Senha</label>
-                <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
-                    data-match="#senha" data-match-error="Atenção! As senhas não estão iguais." required>
-                <span class="help-block">Deve ser igual a senha informada acima.</span>
-                <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"  name="email" class="form-control" [(ngModel)]="user.email" placeholder="nome@email.com"
+            data-error="Por favor, informe um e-mail correto."
+            required email #email="ngModel">
+            <div *ngIf="!email.valid && email.touched" class="alert alert-danger" role="alert">
+                Email inválido, por favor informe um email válido.
             </div>
-            <div class="col-sm-3">
-                <button type="submit" class="btn btn-dark">Voltar</button>&nbsp;
-                <button type="submit" class="btn btn-primary" (click)= "createUser()">Cadastrar</button>
-            </div> 
+        </div>
+        <div class="form-group">
+            <label for="pwd">Senha</label>
+            <input type="password"  name="pwd" class="form-control" [(ngModel)]="user.pwd"
+            placeholder="Senha" minlength="6" maxlength="9" required #pwd="ngModel">
+            <div *ngIf="!pwd.valid && pwd.touched" class="alert alert-danger" role="alert">
+                    Mínimo de seis (6) digitos.
+            </div>
+
+            <!--<div class="form-group">
+                <label for="pwd2">Confirmar senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="Confirme sua Senha"
+                data-match="#pwd" data-match-error="Atenção! As senhas não estão iguais."
+                [(ngModel)]="user.pwd2" required #pwd2="ngModel">
+                <span *ngIf="user.pwd != user.pwd2" class="alert alert-danger">Deve ser igual a senha informada acima.
+                </span>
+            </div>-->
+        </div>
+        <div class="form-group">
+            <a class="btn btn-dark" (click)="voltarPrincipal()">Voltar</a>&nbsp;
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid" ngclick="alerta()">Cadastrar</button>                
         </div>
     </form>
 </div>

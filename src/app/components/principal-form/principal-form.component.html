@@ -2,10 +2,8 @@
 <section id="menu">
     <br>
     <div class="container">
-        <br>
-        <br>
         <div class="row justify-content-around pt-5">
-            <a href="investimento-user" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+            <a (click)="newInvestiment()" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Investimentos</h5>
                 </div> 
@@ -13,7 +11,7 @@
                     <p>Você pode realizar investimentos como Poupança, CDI e IPCA.</p>
                 </div>
             </a>
-            <a class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active text-white">
+            <a  class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Saldo </h5>
                 </div>
@@ -29,7 +27,7 @@
                     <p>Faça transferências com as melhores taxas e tarifas para todas as regiões do Brasil.</p>
                 </div>
             </a>
-            <a href="emprestimo-user" class="col-lg-5 col-md-10 mb-6 list-group-item list-group-item-action align-items-start active text-white">
+            <a (click)="newLoan()" class="col-lg-5 col-md-10 mb-6 list-group-item list-group-item-action align-items-start active text-white">
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Empréstimos</h5>
                 </div>
@@ -37,7 +35,7 @@
                     <p>Faça um Empréstimo. É simples e fácil.</p>
                 </div>
             </a>
-            <a href="extrato" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+            <a (click)="generateLoan()" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Extrato Geral</h5>
                 </div>

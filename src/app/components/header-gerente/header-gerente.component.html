@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="principal-gerente">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" (click)="routerHome()">
         <img src="assets/imagens/LogoSample_ByTailorBrands.jpg"
-        width="60" height="30" class="d-inline-block align-top">
+            width="60" height="30" class="d-inline-block align-top">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
@@ -9,18 +9,22 @@
     <div class="collapse navbar-collapse" id="conteudoNavbar">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="principal-gerente">Home
+            <a class="nav-link" (click)="routerHome()">Home
             <span class="sr-only">(página atual)</span></a>
         </li>
             <li class="nav-item">
-                <a class="nav-link" href="cadastro">Cadastro</a>
+                <a class="nav-link" (click)="routerCadastro()">Cadastro</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="investimento-new">Investimentos</a>
+                <a class="nav-link" (click)="routerInvestimento()">Investimentos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="lista-clientes">Listagem</a>
+                <a class="nav-link" (click)="routerListagemCliente()">Listagem clientes</a>
             </li>
-    </ul>
+            <li class="nav-item">
+                    <a class="nav-link" (click)="routerListagemInvestimento()">Listagem investimentos</a>
+            </li>
+        </ul>
+        <a class="sair" href="">Sair</a>
     </div>
 </nav>
