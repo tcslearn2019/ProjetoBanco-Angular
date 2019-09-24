@@ -14,7 +14,13 @@ export class CadastroFormComponent implements OnInit {
   constructor(private _userService:UserService, private _router:Router) { }
 
   ngOnInit() {  
-    this.user=this._userService.getter();
+    if(this._userService.getter() == null){
+      this._router.navigate(['/']);   
+    }
+    
+    else{
+      this.user=this._userService.getter();
+    }
   }
 
   onSubmit(form){
@@ -42,4 +48,9 @@ export class CadastroFormComponent implements OnInit {
       alert("Cadastro Realizado com sucesso");
     }
   }
+
+  voltarPrincipal(){
+    this._router.navigate(['/principal-gerente']);
+  }
+
 }

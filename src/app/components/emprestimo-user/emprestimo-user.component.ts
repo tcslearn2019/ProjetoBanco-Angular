@@ -14,10 +14,16 @@ export class EmprestimoUserComponent implements OnInit {
   constructor(private _loanService:LoanserviceService, private _userService:UserService,private _router:Router) { }
 
   ngOnInit() {
-    this._loanService.getUserById(this._userService.getter().id).subscribe((listloan)=>{
-      this.loans = listloan;
-      this._loanService.setter(listloan);
-    });
+    if(this._userService.getter() == null){
+      this._router.navigate(['/']);   
+    }
+    
+    else{
+      this._loanService.getUserById(this._userService.getter().id).subscribe((listloan)=>{
+        this.loans = listloan;
+        this._loanService.setter(listloan);
+      });
+    }
   }
 
   newLoan(){
