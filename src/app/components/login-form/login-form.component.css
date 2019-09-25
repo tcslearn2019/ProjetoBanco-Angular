@@ -34,7 +34,7 @@ h2 {
     justify-content: center;
     width: 100%;
     min-height: 100%;
-    padding: 20px;
+    padding: 10px;
   }
   
   #formContent {
@@ -43,7 +43,7 @@ h2 {
     background: #fff;
     padding: 30px;
     width: 90%;
-    max-width: 450px;
+    max-width: 350px;
     position: relative;
     padding: 0px;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -171,5 +171,5 @@ input:focus:-ms-input-placeholder {
   color: transparent;  
 }
 img {
-  height: 710px;
+  height: 657px;
 }

@@ -84,9 +84,6 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     MatSnackBarModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [
-    TransferenciasFormComponent
-  ],
   providers: [UserService],
   bootstrap: [AppComponent]
 })
