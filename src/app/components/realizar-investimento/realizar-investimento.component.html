@@ -13,12 +13,12 @@
             <tbody>
                 <tr *ngFor="let investimento of tipoInvestimento">
                         <td>{{investimento.nome}}</td>
-                        <td>{{investimento.juros}}</td>  
+                        <td>{{investimento.juros | number: '1.1-2'}}</td>  
                         <td>
-                        <input type="number" name="valor"  [(ngModel)]="investimento.valor" class="form-control"  placeholder="Valor a aplicar" required>
+                        <input type="number" id="valor" name="valor"  [(ngModel)]="investimento.valor" class="form-control"  placeholder="Valor a aplicar" required>
                         </td> 
                         <td>     
-                        <button class="btn btn-primary" (click)="updateUser(investimento)" ngclick="alerta()">Aplicar</button>&nbsp;
+                        <button class="btn btn-primary" (click)="updateUser(investimento)" ngclick="alerta()" onclick="document.getElementById('valor').value = ''">Aplicar</button>&nbsp;
                     </td>
                 </tr>
             </tbody>        

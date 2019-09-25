@@ -15,8 +15,8 @@
             <tr *ngFor="let investimento of investimentos">
                 <td>{{investimento.fkIdTipoInvestimento.nome}}</td>
                 <td>{{investimento.data}}</td>
-                <td>{{investimento.valor}}</td>
-                <td>{{investimento.valorTemp}}</td>
+                <td>{{investimento.valor | number: '1.1-2'}}</td>
+                <td>{{investimento.valorTemp | number: '1.1-2'}}</td>
                 <td>
                     <button class="btn btn-success" (click)="Resgatar(investimento)">Resgatar</button>
                 </td>
