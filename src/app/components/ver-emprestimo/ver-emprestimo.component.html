@@ -13,14 +13,15 @@
         </thead>
         <tbody>
             <tr *ngFor="let loan of loans">
-                    <td>{{loan.valorEmprestimo}}</td>
-                    <td>{{loan.juros}}</td>
-                    <td>{{loan.valorPagar}}</td>
+                    <td>{{loan.valorEmprestimo | number: '1.1-2'}}</td>
+                    <td>{{loan.juros | number: '1.1-2'}}</td>
+                    <td>{{loan.valorPagar | number: '1.1-2'}}</td>
                     <td>{{loan.dataEmprestimo}}</td>
                 <td>
-                    <button class="btn btn-primary">Pagar</button>&nbsp;
+                    <button class="btn btn-primary" (click)="payLoan(loan)">Pagar</button>&nbsp;
                 </td>
             </tr>
         </tbody>
     </table>
+    <a class="btn btn-dark" (click)="redirect()" >Voltar</a>&nbsp; 
 </div>

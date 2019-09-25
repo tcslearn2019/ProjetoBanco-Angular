@@ -42,8 +42,8 @@ export class AccountserviceService {
     return Observable.throw(error || "Conection Error");
   }
 
-  setter(tipoinvestimento:Account){
-    this.acc=tipoinvestimento;
+  setter(acc:Account){
+    this.acc=acc;
   }
 
   getter(){

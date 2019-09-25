@@ -25,9 +25,9 @@ import { VerEmprestimoComponent } from './components/ver-emprestimo/ver-empresti
 import { RealizarInvestimentoComponent } from './components/realizar-investimento/realizar-investimento.component';
 import { VerInvestimentoComponent } from './components/ver-investimento/ver-investimento.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { OperacaoInvestimentoComponent } from './components/operacao-investimento/operacao-investimento.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
@@ -46,6 +46,7 @@ const appRoutes:Routes = [
   {path: 'realizar-investimento', component: RealizarInvestimentoComponent},
   {path: 'ver-investimento', component: VerInvestimentoComponent},
   {path: 'extrato', component: ExtratoComponent},
+  {path: 'resgate-adicione', component: OperacaoInvestimentoComponent}
 ];
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
@@ -72,7 +73,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     VerEmprestimoComponent,
     RealizarInvestimentoComponent,
     VerInvestimentoComponent,
-    FooterComponent
+    FooterComponent,
+    OperacaoInvestimentoComponent
   ],
   imports: [
     BrowserModule,
@@ -80,9 +82,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     FormsModule,
     RouterModule.forRoot(appRoutes),
     NgxMaskModule.forRoot(options),
-    AngularFontAwesomeModule,
-    MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFontAwesomeModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

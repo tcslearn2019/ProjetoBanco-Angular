@@ -18,19 +18,18 @@ export class PrincipalFormComponent implements OnInit {
   ngOnInit() {
     this.acc = new Account();
     if(this._userService.getter() == null){
-      this._router.navigate(['/principal']);
+      this._router.navigate(['/']);   
     }
     
     else{
-    this.user=this._userService.getter();
-    this._accounterService.returnBalance(this.user.id).subscribe((acc)=>{
+      this.user=this._userService.getter();
+      this._accounterService.returnBalance(this.user.id).subscribe((acc)=>{
       this.acc=acc;
     },(error)=>{
       console.log(error);
     })   
     }
   }
-
 
   newTransfer(){
     this._router.navigate(['/transferencia']);
@@ -39,5 +38,14 @@ export class PrincipalFormComponent implements OnInit {
   newLoan(){
     this._router.navigate(['/emprestimo-user']);
   }
+
+  generateLoan(){
+    this._router.navigate(['/extrato']);
+  }
+
+  newInvestiment(){
+    this._router.navigate(['/investimento-user']);
+  }
+
 
 }

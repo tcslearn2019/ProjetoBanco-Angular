@@ -1,3 +1,16 @@
 th{
     font-family: 'Helvetica', sans-serif;
+    color: rgb(19, 126, 226);
+}
+
+a{
+    color: white!important
+}
+
+h4{
+    color:#1a8cff;
+}
+
+h4:hover{
+    color: linear-gradient(135deg, 0%,#3399ff 100%);
 }

@@ -1,28 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../shared_service/user.service';
-import {LoanserviceService} from '../../shared_service/loanservice.service';
+import { UserService } from '../../shared_service/user.service';
+import { LoanserviceService } from '../../shared_service/loanservice.service';
 import { Loan } from 'src/app/loan';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-realizar-emprestimo',
   templateUrl: './realizar-emprestimo.component.html',
   styleUrls: ['./realizar-emprestimo.component.css']
 })
 export class RealizarEmprestimoComponent implements OnInit {
-  private loan:Loan;
+  private loan: Loan;
 
-  constructor(private _userService:UserService, private _loanService:LoanserviceService) { }
+  constructor(private _userService: UserService, private _loanService: LoanserviceService, private _router: Router) { }
 
-  ngOnInit() {   
-    this.loan = new Loan();
-    console.log(this._userService);
+  ngOnInit() {
+    if (this._userService.getter() == null) {
+      this._router.navigate(['/']);
+    }
+
+    else {
+      this.loan = new Loan();
+    }
   }
 
-  MandarForm(){
+  mandarForm() {
     this.loan.idOrigem = this._userService.getter().id;
-    console.log("Indo!");
-    this._loanService.createUser(this.loan).subscribe((user)=>{
-      console.log(this.loan);
+    this._loanService.createUser(this.loan).subscribe((user) => {
+      this._router.navigate(['/principal']);
     })
+  }
+
+  redirect() {
+    this._router.navigate(['/principal']);
   }
 
 }

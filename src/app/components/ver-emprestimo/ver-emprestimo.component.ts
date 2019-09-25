@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
-import {LoanserviceService} from '../../shared_service/loanservice.service';
-import {UserService} from '../../shared_service/user.service';
-import {Loan} from '../../loan';
-import { User } from 'src/app/user';
+import { Router } from '@angular/router'
+import { LoanserviceService } from '../../shared_service/loanservice.service';
+import { UserService } from '../../shared_service/user.service';
+import { Loan } from '../../loan';
 
 @Component({
   selector: 'app-ver-emprestimo',
@@ -11,20 +10,32 @@ import { User } from 'src/app/user';
   styleUrls: ['./ver-emprestimo.component.css']
 })
 export class VerEmprestimoComponent implements OnInit {
-  private loans:Loan[];
+  private loans: Loan[];
 
-  constructor(private _loanService:LoanserviceService, private _router:Router, private _userService:UserService) { }
+  constructor(private _loanService: LoanserviceService, private _router: Router, private _userService: UserService) { }
 
   ngOnInit() {
-    this._loanService.getUsers().subscribe((listloan)=>{
-      console.log(listloan)
-      this.loans = listloan;
-    });
+    if (this._userService.getter() == null) {
+      this._router.navigate(['/']);
+    }
 
-    this._loanService.getUserById(this._userService.getter().id).subscribe((listloan)=>{
-      this.loans = listloan;
-    });
-
+    else {
+      this.loans = this._loanService.getter();
+    }
   }
 
+  payLoan(loan) {
+    this._loanService.payLoan(loan.idEmprestimo).subscribe((user) => {
+      if(user == false){
+        alert("Saldo Insuficiente.");
+      }else{
+        alert("Emprestimo Pago com sucesso.")
+      }
+      this._router.navigate(['/principal']);
+    })
+  }
+
+  redirect() {
+    this._router.navigate(['/principal']);
+  }
 }

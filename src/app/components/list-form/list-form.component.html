@@ -1,8 +1,6 @@
 <app-header-gerente></app-header-gerente>
 <br>
 <div class="container">  
-    <br>
-    <br>  
     <table class="table table-striped table-hover mt-4">
         <thead>
             <!--<th scope="row">Id</th>-->
@@ -27,10 +25,10 @@
                     <td>{{user.rg}}</td>   
                 <td>
                     <button class="btn btn-primary" (click)="updateUser(user)">Editar</button>&nbsp;
-                    <button class="btn btn-danger" (click)="deleteUser(user)">Excluir</button>
+                    <!--<button class="btn btn-danger" (click)="deleteUser(user)">Excluir</button>-->
                 </td>
             </tr>
         </tbody>        
     </table>
-    <a class="btn btn-dark" href="principal-gerente">Voltar</a>&nbsp;
+    <a class="btn btn-dark" (click)="voltarPrincipal()">Voltar</a>&nbsp;
 </div>

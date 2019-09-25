@@ -1,12 +1,9 @@
 <app-header></app-header>
 <section id="menu">
     <div class="container">
-        <br>
-        <br>
         <div class="row justify-content-around pt-5">
-            <a href="investimento-user"
-            class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
-                <div class="text-wrap vcenter glyphicon glyphicon-stats">
+            <a (click)="newInvestiment()" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+                <div class="text-wrap vcenter">
                     <h5 class="mb-1">Investimentos</h5>
                 </div> 
                 <div class="investimento">
@@ -17,8 +14,8 @@
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Saldo </h5>
                 </div>
-                <div class="saldo">
-                    <p>R$ {{acc.saldo}}</p>
+                <div class="saldo">                    
+                    <p>R$ {{acc.saldo | number: '1.1-2'}}</p>
                 </div>
             </a>
             <a (click)="newTransfer()"  class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active text-white">
@@ -37,7 +34,7 @@
                     <p>Faça um Empréstimo. É simples e fácil.</p>
                 </div>
             </a>
-            <a href="extrato" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
+            <a (click)="generateLoan()" class="col-lg-5 col-md-10 list-group-item list-group-item-action align-items-start active">
                 <div class="text-wrap vcenter">
                     <h5 class="mb-1">Extrato Geral</h5>
                 </div>

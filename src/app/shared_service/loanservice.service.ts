@@ -11,7 +11,7 @@ export class LoanserviceService {
   private baseUrl:string='http://localhost:8080/banco';
   private headers = new Headers({'Content-Type':'application/json'})
   private options = new RequestOptions({headers:this.headers});
-  private loan:Loan;
+  private loan:Loan[];
   constructor(private _http:Http) { }
 
   getUsers(){
@@ -38,11 +38,19 @@ export class LoanserviceService {
     return this._http.post(this.baseUrl + '/loanpersonal/', JSON.stringify(id), this.options).pipe(map((response: Response) => response.json()));
   }
 
+  getUserByIdPayed(id:Number){
+    return this._http.post(this.baseUrl + '/loanpersonalpayed/', JSON.stringify(id), this.options).pipe(map((response: Response) => response.json()));
+  }
+
+  payLoan(id:Number){
+    return this._http.post(this.baseUrl + '/loanpay/', JSON.stringify(id), this.options).pipe(map((response: Response) => response.json()));
+  }
+
   errorHandler(error:Response){
     return Observable.throw(error || "Conection Error");
   }
 
-  setter(loan:Loan){
+  setter(loan:Loan[]){
     this.loan=loan;
   }
 

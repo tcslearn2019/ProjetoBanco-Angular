@@ -1,18 +1,14 @@
 <app-header></app-header>
 <div class="container">
-    <form (ngSubmit)="MandarForm()">
+    <form (ngSubmit)="mandarForm()">
         <div class="form-group">
             <br>
-            <br>
-            <br>
-            <label for="valor">Nome</label>
-            <input type="text" class="form-control" placeholder="Nome" required>
         </div>
         <div class="form-group">
             <label for="valor">Valor</label>
             <input type="number" name="valor" [(ngModel)]="loan.valor" class="form-control"  placeholder="Valor" required>
-        </div>
-        <a class="btn btn-dark" href="emprestimo-user">Voltar</a>&nbsp;
+        </div> 
+        <a class="btn btn-dark" (click)="redirect()" >Voltar</a>&nbsp; 
         <button type="submit" class="btn btn-primary">Realizar Emprestimo</button>
-    </form>    
+    </form>   
 </div>

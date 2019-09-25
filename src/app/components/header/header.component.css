@@ -3,6 +3,11 @@
     text-align: right;
 }
 
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
 .navbar-icon-top .navbar-nav .nav-link > .fa {
   position: relative;
   width: 36px;

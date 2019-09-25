@@ -72,9 +72,8 @@
             </div>-->
         </div>
         <div class="form-group">
-            <a class="btn btn-dark" href="principal-gerente">Voltar</a>&nbsp;
+            <a class="btn btn-dark" (click)="voltarPrincipal()">Voltar</a>&nbsp;
             <button type="submit" class="btn btn-primary" [disabled]="!form.valid" ngclick="alerta()">Cadastrar</button>                
         </div>
     </form>
 </div>
-<app-footer></app-footer>
