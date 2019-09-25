@@ -41,7 +41,9 @@
             </div>
             <div>
                 <a class="btn btn-dark" href="principal">Voltar</a>&nbsp;
-                <button type="submit" class="btn btn-primary" [disabled]="!tra.valid">Transferir</button>            
+                <button type="submit" class="btn btn-primary"
+                [disabled]="!tra.valid"
+                mat-button (click)="enviarTransferencia('Você não possui saldo suficiente para transferir', 'Tente novamente')">Transferir</button>            
             </div>
         </form>
     </div>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {UserService} from '../../shared_service/user.service';
 import { Transferencia } from '../../transferencia';
 import {TransferserviceService} from '../../shared_service/transferservice.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-transferencias-form',
@@ -13,7 +14,8 @@ export class TransferenciasFormComponent implements OnInit {
 
   transferencia:Transferencia;
 
-  constructor(private _userService:UserService,private _transfService:TransferserviceService, private _router:Router) { }
+  constructor(private _userService:UserService,private _transfService:TransferserviceService, private _router:Router,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.transferencia = new Transferencia();
@@ -34,6 +36,8 @@ export class TransferenciasFormComponent implements OnInit {
     })
   }
 
-  
+  enviarTransferencia(message, action){
+    this.snackBar.open(message, action);
+  }
 
 }

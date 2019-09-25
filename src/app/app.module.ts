@@ -25,6 +25,9 @@ import { VerEmprestimoComponent } from './components/ver-emprestimo/ver-empresti
 import { RealizarInvestimentoComponent } from './components/realizar-investimento/realizar-investimento.component';
 import { VerInvestimentoComponent } from './components/ver-investimento/ver-investimento.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
@@ -77,6 +80,12 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     FormsModule,
     RouterModule.forRoot(appRoutes),
     NgxMaskModule.forRoot(options),
+    AngularFontAwesomeModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
+  ],
+  entryComponents: [
+    TransferenciasFormComponent
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
