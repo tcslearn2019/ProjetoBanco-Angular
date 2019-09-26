@@ -8,7 +8,7 @@ import { Transferencia } from '../transferencia';
   providedIn: 'root'
 })
 export class TransferserviceService {
-  private baseUrl:string='http://192.168.239.56:8080/banco';
+  private baseUrl:string='http://localhost:8080/banco';
   private headers = new Headers({'Content-Type':'application/json'})
   private options = new RequestOptions({headers:this.headers});
   private transf:Transferencia;

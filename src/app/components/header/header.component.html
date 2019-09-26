@@ -3,10 +3,12 @@
         <img src="assets/imagens/LogoSample_ByTailorBrands.jpg"
             width="60" height="50" class="d-inline-block align-top">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-label="Alterna navegação"
+    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
         <span class="navbar-toggler-icon"></span>
     </button>          
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" [collapse]="isCollapsed">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" (click)="routerHome()">

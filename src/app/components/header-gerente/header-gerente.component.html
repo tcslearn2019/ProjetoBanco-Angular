@@ -1,19 +1,21 @@
-<nav class="navbar navbar-icon-top navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-light bg-light" role="navigation">
     <a class="navbar-brand" (click)="routerHome()">
         <img src="assets/imagens/LogoSample_ByTailorBrands.jpg"
             width="60" height="50" class="d-inline-block align-top">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Alterna navegação">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbar"
+    aria-controls="conteudoNavbar" aria-label="Alterna navegação"
+    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="conteudoNavbar">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" (click)="routerHome()">
-                <i class="fa fa-home"></i>
-                Home
-            <span class="sr-only">(página atual)</span></a>
-        </li>
+    <div class="collapse navbar-collapse" id="conteudoNavbar" [collapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" (click)="routerHome()">
+                    <i class="fa fa-home"></i>
+                    Home
+                <span class="sr-only">(página atual)</span></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" (click)="routerCadastro()"><i class="fa fa-user-plus"></i>Cadastro</a>
             </li>
@@ -30,4 +32,3 @@
         <a class="sair" href=""><i class="fa fa-sign-out"></i>Sair</a>
     </div>
 </nav>
-<app-footer></app-footer>
