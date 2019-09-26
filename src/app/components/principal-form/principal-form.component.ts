@@ -20,19 +20,18 @@ export class PrincipalFormComponent implements OnInit {
     if (this._userService.getter() == null) {
       this._router.navigate(['/']);
     }
-
-    else {
-      this.user = this._userService.getter();
-      this._accounterService.returnBalance(this.user.id).subscribe((acc) => {
-        this.acc = acc;
-      }, (error) => {
-        console.log(error);
-      })
+    
+    else{
+      this.user=this._userService.getter();
+      this._accounterService.returnBalance(this.user.id).subscribe((acc)=>{
+      this.acc=acc;
+    },(error)=>{
+      console.log(error);
+    })   
     }
   }
 
-
-  newTransfer() {
+  newTransfer(){
     this._router.navigate(['/transferencia']);
   }
 

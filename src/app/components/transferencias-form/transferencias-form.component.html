@@ -1,8 +1,6 @@
 <app-header></app-header>
     <div class="container">
         <br>
-        <br>
-        <br>
         <form (ngSubmit)="Enviar()" #tra="ngForm">
             <div class="row">
                 <div class="col">
@@ -40,7 +38,7 @@
                 </div>
             </div>
             <div>
-                <a class="btn btn-dark" (click)="voltarPrincipal()">Voltar</a>&nbsp;
+                <a class="btn btn-dark" (click)="voltarPrincipal()"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Voltar</a>&nbsp;
                 <button type="submit" class="btn btn-primary" [disabled]="!tra.valid">Transferir</button>            
             </div>
         </form>

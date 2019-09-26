@@ -4,16 +4,14 @@ section {
     background-color: white;
 }
 a {
-    
     color: white!important;
     display: flex;
     background: white;
     padding: 3rem 1rem 3rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
     box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
     text-align: center;
-    
 }
 
 a:hover {

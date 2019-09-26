@@ -6,22 +6,22 @@
             <thead>
                 <!--<th scope="row">Id</th>-->
                 <th scope="row">Nome</th>
-                <th scope="row">juros</th>
+                <th scope="row">Juros(%)</th>
                 <th scope="row">Valor a aplicar</th>
                 <th scope="row">Ações</th>
             </thead>
             <tbody>
                 <tr *ngFor="let investimento of tipoInvestimento">
                         <td>{{investimento.nome}}</td>
-                        <td>{{investimento.juros}}</td>  
+                        <td>{{investimento.juros | number: '1.1-2'}}</td>  
                         <td>
-                        <input type="number" name="valor"  [(ngModel)]="investimento.valor" class="form-control"  placeholder="Valor a aplicar" required>
+                        <input type="number" id="valor" name="valor"  [(ngModel)]="investimento.valor" class="form-control"  placeholder="Valor a aplicar" required>
                         </td> 
                         <td>     
-                        <button class="btn btn-primary" (click)="updateUser(investimento)">Aplicar</button>&nbsp;
+                        <button class="btn btn-primary" (click)="updateUser(investimento)" ngclick="alerta()" onclick="document.getElementById('valor').value = ''">Aplicar</button>&nbsp;
                     </td>
                 </tr>
             </tbody>        
         </table>
-        <a class="btn btn-dark" (click)="voltarPrincipal()">Voltar</a>&nbsp;
+        <a class="btn btn-dark" (click)="voltarPrincipal()"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Voltar</a>&nbsp;
     </div>

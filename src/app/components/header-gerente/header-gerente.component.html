@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" (click)="routerHome()">
         <img src="assets/imagens/LogoSample_ByTailorBrands.jpg"
             width="60" height="30" class="d-inline-block align-top">
@@ -9,22 +9,24 @@
     <div class="collapse navbar-collapse" id="conteudoNavbar">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" (click)="routerHome()">Home
+            <a class="nav-link" (click)="routerHome()">
+                <i class="fa fa-home"></i>
+                Home
             <span class="sr-only">(página atual)</span></a>
         </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="routerCadastro()">Cadastro</a>
+                <a class="nav-link" (click)="routerCadastro()"><i class="fa fa-user-plus"></i>Cadastro</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="routerInvestimento()">Investimentos</a>
+                <a class="nav-link" (click)="routerInvestimento()"><i class="fa fa-bar-chart"></i>Investimentos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="routerListagemCliente()">Listagem clientes</a>
+                <a class="nav-link" (click)="routerListagemCliente()"><i class="fa fa-list"></i>Listagem clientes</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" (click)="routerListagemInvestimento()">Listagem investimentos</a>
+                <a class="nav-link" (click)="routerListagemInvestimento()"><i class="fa fa-list"></i>Listagem investimentos</a>
             </li>
         </ul>
-        <a class="sair" href="">Sair</a>
+        <a class="sair" href=""><i class="fa fa-sign-out"></i>Sair</a>
     </div>
 </nav>
