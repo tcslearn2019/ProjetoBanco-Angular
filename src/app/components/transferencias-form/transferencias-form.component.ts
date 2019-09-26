@@ -31,10 +31,8 @@ export class TransferenciasFormComponent implements OnInit {
       if(transf == true){
         alert("Transferência Realizada com sucesso.");
         this._router.navigate(['/principal']);
-        console.log(transf);
       }else {
         alert("Dados da Conta Destino estão incorretos ou seu saldo é insuficiente.");
-        console.log(transf);
       }
     })
   }

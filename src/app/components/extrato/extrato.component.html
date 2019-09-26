@@ -14,9 +14,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let loan of loans">
-                    <td>{{loan.valorEmprestimo | number: '1.1-2'}}</td>
+                    <td>R${{loan.valorEmprestimo | number: '1.1-2'}}</td>
                     <td>{{loan.juros | number: '1.1-2'}}</td>
-                    <td>{{loan.valorPagar | number: '1.1-2'}}</td>
+                    <td>R${{loan.valorPagar | number: '1.1-2'}}</td>
                     <td>{{loan.dataEmprestimo}}</td>
             </tr>
         </tbody>
@@ -33,9 +33,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let loan of loansPayed">
-                    <td>{{loan.valorEmprestimo | number: '1.1-2'}}</td>
+                    <td>R${{loan.valorEmprestimo | number: '1.1-2'}}</td>
                     <td>{{loan.juros | number: '1.1-2'}}</td>
-                    <td>{{loan.valorPagar | number: '1.1-2'}}</td>
+                    <td>R${{loan.valorPagar | number: '1.1-2'}}</td>
                     <td>{{loan.dataEmprestimo}}</td>
                     <td>{{loan.dataPagamento}}</td>
             </tr>
@@ -59,7 +59,7 @@
                     <td>{{transferencia.agenciaDestino}}</td>
                     <td>{{transferencia.contaDestino}}</td>
                     <td>{{transferencia.dataTransferencia}}</td>
-                    <td>{{transferencia.valor | number: '1.1-2'}}</td>
+                    <td>R${{transferencia.valor | number: '1.1-2'}}</td>
             </tr>
         </tbody>
     </table>
@@ -76,8 +76,8 @@
                 <tr *ngFor="let investimento of investimentos">
                     <td>{{investimento.fkIdTipoInvestimento.nome}}</td>
                     <td>{{investimento.data}}</td>
-                    <td>{{investimento.valor | number: '1.1-2'}}</td>
-                    <td>{{investimento.valorTemp | number: '1.1-2'}}</td>
+                    <td>R${{investimento.valor | number: '1.1-2'}}</td>
+                    <td>R${{investimento.valorTemp | number: '1.1-2'}}</td>
                 </tr>
             </tbody>
     </table>
@@ -95,9 +95,9 @@
                 <tr *ngFor="let investimento of investimentosResgatados">
                     <td>{{investimento.fkIdTipoInvestimento.nome}}</td>
                     <td>{{investimento.data}}</td>
-                    <td>{{investimento.valor | number: '1.1-2'}}</td>
+                    <td>R${{investimento.valor | number: '1.1-2'}}</td>
                     <td>{{investimento.dataResgate}}</td>
-                    <td>{{investimento.valorTemp | number: '1.1-2'}}</td>
+                    <td>R${{investimento.valorTemp | number: '1.1-2'}}</td>
                 </tr>
             </tbody>
     </table>
