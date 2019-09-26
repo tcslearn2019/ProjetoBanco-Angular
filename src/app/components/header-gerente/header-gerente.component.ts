@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./header-gerente.component.css']
 })
 export class HeaderGerenteComponent implements OnInit {
+  isCollapsed = false;
 
   constructor(private _router:Router) { }
 

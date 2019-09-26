@@ -27,6 +27,8 @@ import { VerInvestimentoComponent } from './components/ver-investimento/ver-inve
 import { FooterComponent } from './components/footer/footer.component';
 import { OperacaoInvestimentoComponent } from './components/operacao-investimento/operacao-investimento.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes:Routes = [
   {path: '', component: LoginFormComponent},
@@ -81,7 +83,9 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     FormsModule,
     RouterModule.forRoot(appRoutes),
     NgxMaskModule.forRoot(options),
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    CollapseModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
