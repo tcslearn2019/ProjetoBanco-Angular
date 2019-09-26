@@ -1,8 +1,6 @@
 <app-header-gerente></app-header-gerente>
     <div class="container">
         <br>
-        <br>
-        <br>
         <form #form="ngForm" (ngSubmit)="processForm()" class="needs-validation" novalidate>
             <div class="form-group">
                 <label for="nome_investimento">Nome do Investimento</label>
@@ -20,8 +18,8 @@
                     Informe a taxa de juros.
                 </div>
             </div>
-            <a class="btn btn-dark" (click)="voltarPrincipal()">Voltar</a>&nbsp;
-            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Adicionar</button>
+            <a class="btn btn-dark" (click)="voltarPrincipal()"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Voltar</a>&nbsp;
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid"><i class="fa fa-plus"></i>&nbsp;&nbsp;Adicionar</button>
         </form>
     </div>
 <app-footer></app-footer>
