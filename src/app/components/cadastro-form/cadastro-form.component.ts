@@ -46,7 +46,7 @@ export class CadastroFormComponent implements OnInit {
     }
 
     function alertaError(){
-      alert("Não foi possivel realizar o cadastro");
+      alert("Não foi possivel realizar o cadastro, dados duplicados.");
     }
   }
 
