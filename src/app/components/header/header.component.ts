@@ -11,6 +11,7 @@ import {UserService} from '../../shared_service/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isCollapsed = false;
   private acc:Account;
   private user:User;
 
