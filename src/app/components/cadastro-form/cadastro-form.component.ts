@@ -33,6 +33,7 @@ export class CadastroFormComponent implements OnInit {
         alerta();
         this._router.navigate(['/principal-gerente']);
       },(error)=>{
+        alertaError();
         console.log(error);
       });
     }else{
@@ -46,6 +47,10 @@ export class CadastroFormComponent implements OnInit {
 
     function alerta(){
       alert("Cadastro Realizado com sucesso");
+    }
+
+    function alertaError(){
+      alert("Não foi possivel realizar o cadastro");
     }
   }
 
