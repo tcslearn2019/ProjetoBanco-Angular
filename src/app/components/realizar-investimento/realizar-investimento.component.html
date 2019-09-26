@@ -6,14 +6,14 @@
             <thead>
                 <!--<th scope="row">Id</th>-->
                 <th scope="row">Nome</th>
-                <th scope="row">Juros(%)</th>
+                <th scope="row">Juros</th>
                 <th scope="row">Valor a aplicar</th>
                 <th scope="row">Ações</th>
             </thead>
             <tbody>
                 <tr *ngFor="let investimento of tipoInvestimento">
                         <td>{{investimento.nome}}</td>
-                        <td>{{investimento.juros | number: '1.1-2'}}</td>  
+                        <td>{{investimento.juros | number: '1.1-2'}}%</td>  
                         <td>
                         <input type="number" id="valor" name="valor"  [(ngModel)]="investimento.valor" class="form-control"  placeholder="Valor a aplicar" required>
                         </td> 

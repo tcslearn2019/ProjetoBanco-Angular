@@ -29,6 +29,7 @@ export class RealizarEmprestimoComponent implements OnInit {
       alert("Valor máximo: R$5000");
     } else {
       this._loanService.createUser(this.loan).subscribe((user) => {
+        alert("Empréstimo realizado com sucesso, taxa de juros é de: 2.5%");
         this._router.navigate(['/principal']);
       }, (error) => {
         alert("Você já atingiu o limite de 5 empréstimos ativo.");
