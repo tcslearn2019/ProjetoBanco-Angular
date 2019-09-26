@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared_service/user.service';
 import { LoanserviceService } from '../../shared_service/loanservice.service';
-import { Loan } from 'src/app/loan';
+import { Loan } from 'src/app/model/loan';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-realizar-emprestimo',
@@ -25,9 +25,15 @@ export class RealizarEmprestimoComponent implements OnInit {
 
   mandarForm() {
     this.loan.idOrigem = this._userService.getter().id;
-    this._loanService.createUser(this.loan).subscribe((user) => {
-      this._router.navigate(['/principal']);
-    })
+    if (Number(this.loan.valor) > 5000) {
+      alert("Valor máximo: R$5000");
+    } else {
+      this._loanService.createUser(this.loan).subscribe((user) => {
+        this._router.navigate(['/principal']);
+      }, (error) => {
+        alert("Você já atingiu o limite de 5 empréstimos ativo.");
+      })
+    }
   }
 
   redirect() {

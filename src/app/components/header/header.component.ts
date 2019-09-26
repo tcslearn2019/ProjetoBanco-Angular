@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AccountserviceService} from '../../shared_service/accountservice.service';
-import {Account} from '../../account';
-import { User } from 'src/app/user';
+import {Account} from '../../model/account';
+import { User } from 'src/app/model/user';
 import {UserService} from '../../shared_service/user.service';
 
 @Component({
@@ -11,6 +11,7 @@ import {UserService} from '../../shared_service/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isCollapsed = false;
   private acc:Account;
   private user:User;
 

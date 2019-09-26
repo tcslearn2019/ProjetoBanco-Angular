@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { Tipoinvestimento } from '../../tipoinvestimento';
+import { Tipoinvestimento } from '../../model/tipoinvestimento';
 import { TipoInvestimento } from '../../shared_service/tipoinvestimento.service';
-import { User } from '../../user';
+import { User } from '../../model/user';
 import { UserService } from '../../shared_service/user.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { UserService } from '../../shared_service/user.service';
   styleUrls: ['./header-gerente.component.css']
 })
 export class HeaderGerenteComponent implements OnInit {
+  isCollapsed = false;
 
   constructor(private _userService: UserService,private _router:Router, private _tipoInvestimento:TipoInvestimento) { }
 

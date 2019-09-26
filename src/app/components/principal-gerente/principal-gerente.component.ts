@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared_service/user.service';
 import { TipoInvestimento } from '../../shared_service/tipoinvestimento.service';
-import { User } from '../../user';
-import { Tipoinvestimento } from '../../tipoinvestimento';
+import { User } from '../../model/user';
+import { Tipoinvestimento } from '../../model/tipoinvestimento';
 import { Router } from '@angular/router';
 
 @Component({

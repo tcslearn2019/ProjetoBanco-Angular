@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestimentosserviceService } from '../../shared_service/investimentosservice.service';
-import { Investimento } from '../../investimento';
+import { Investimento } from '../../model/investimento';
 import { Router } from '@angular/router';
 import { UserService } from '../../shared_service/user.service';
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {LoanserviceService} from '../../shared_service/loanservice.service';
 import {UserService} from '../../shared_service/user.service';
-import {Loan} from '../../loan';
+import {Loan} from '../../model/loan';
 
 @Component({
   selector: 'app-emprestimo-user',

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Tipoinvestimento } from '../tipoinvestimento';
+import { Tipoinvestimento } from '../model/tipoinvestimento';
 
 /*
 import {Observable} from 'rxjs/Observable';

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { LoanserviceService } from '../../shared_service/loanservice.service';
 import { Router } from '@angular/router'
 import { UserService } from '../../shared_service/user.service';
-import { Loan } from '../../loan';
-import { Transferencia } from '../../transferencia';
+import { Loan } from '../../model/loan';
+import { Transferencia } from '../../model/transferencia';
 import { TransferserviceService } from '../../shared_service/transferservice.service';
 import { InvestimentosserviceService } from '../../shared_service/investimentosservice.service';
-import { Investimento } from '../../investimento';
+import { Investimento } from '../../model/investimento';
 
 @Component({
   selector: 'app-extrato',

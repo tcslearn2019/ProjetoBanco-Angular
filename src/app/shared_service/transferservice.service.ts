@@ -2,7 +2,7 @@ import { Injectable, SystemJsNgModuleLoader } from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Transferencia } from '../transferencia';
+import { Transferencia } from '../model/transferencia';
 
 @Injectable({
   providedIn: 'root'

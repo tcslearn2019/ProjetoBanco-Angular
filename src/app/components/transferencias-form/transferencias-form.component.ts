@@ -1,7 +1,7 @@
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../shared_service/user.service';
-import { Transferencia } from '../../transferencia';
+import { Transferencia } from '../../model/transferencia';
 import { TransferserviceService } from '../../shared_service/transferservice.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TipoInvestimento} from '../../shared_service/tipoinvestimento.service';
-import {Tipoinvestimento} from '../../tipoinvestimento';
+import {Tipoinvestimento} from '../../model/tipoinvestimento';
 import {Router} from '@angular/router'
 import {UserService} from '../../shared_service/user.service';
 
