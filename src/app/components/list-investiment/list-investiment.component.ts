@@ -10,7 +10,8 @@ import { UserService } from '../../shared_service/user.service';
   styleUrls: ['./list-investiment.component.css']
 })
 export class ListInvestimentComponent implements OnInit {
-  private investimento: Tipoinvestimento[];
+  private investimentoAtivo: Tipoinvestimento[];
+  private investimentoInativo: Tipoinvestimento[];
 
   constructor(private _userService: UserService,private _investimentoService: TipoInvestimento, private _router: Router) { }
 
@@ -20,8 +21,14 @@ export class ListInvestimentComponent implements OnInit {
     }
 
     else {
-      this._investimentoService.getUsers().subscribe((investimento) => {
-        this.investimento = investimento;
+      this._investimentoService.getInvestimentsAtivo().subscribe((investimento) => {
+        this.investimentoAtivo = investimento;
+      }, (error) => {
+        console.log(error);
+      })
+
+      this._investimentoService.getInvestimentsInativo().subscribe((investimento) => {
+        this.investimentoInativo = investimento;
       }, (error) => {
         console.log(error);
       })
@@ -30,10 +37,10 @@ export class ListInvestimentComponent implements OnInit {
 
   deleteUser(Investiment) {
     this._investimentoService.deleteUser(Investiment.idinv).subscribe((data) => {
-      this.investimento.splice(this.investimento.indexOf(Investiment), 1);
     }, (error) => {
       console.log(error);
     })
+    this._router.navigate(['/principal-gerente']);
   }
 
   updateUser(Investiment) {

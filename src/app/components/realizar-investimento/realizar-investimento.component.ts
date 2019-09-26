@@ -21,7 +21,7 @@ export class RealizarInvestimentoComponent implements OnInit {
     }
 
     else {
-      this._tipoInvestimentoService.getUsers().subscribe((tipoInvestimento) => {
+      this._tipoInvestimentoService.getInvestimentsAtivo().subscribe((tipoInvestimento) => {
         this.tipoInvestimento = tipoInvestimento;
       }, (error) => {
         console.log(error);

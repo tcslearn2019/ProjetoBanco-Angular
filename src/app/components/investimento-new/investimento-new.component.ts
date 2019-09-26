@@ -27,14 +27,12 @@ export class InvestimentoNewComponent implements OnInit {
   processForm() {
     if (this.tipoInvest.idinv == undefined) {
       this._investmentService.createUser(this.tipoInvest).subscribe((tipoInvest) => {
-        console.log(tipoInvest);
         this._router.navigate(['/principal-gerente']);
       }, (error) => {
         console.log(error);
       });
     } else {
       this._investmentService.updateUser(this.tipoInvest).subscribe((tipoInvest) => {
-        console.log(tipoInvest);
         this._router.navigate(['/principal-gerente']);
       }, (error) => {
         console.log(error);

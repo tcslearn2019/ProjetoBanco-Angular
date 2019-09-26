@@ -27,6 +27,8 @@ export class LoginFormComponent implements OnInit {
       else{
         this._router.navigate(['/principal']);         
       }
+    }, (error) => {
+      alert("Acesso negado!");
     })
   }
 }

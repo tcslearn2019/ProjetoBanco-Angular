@@ -20,7 +20,6 @@ export class ListFormComponent implements OnInit {
 
     else {
       this._userService.getUsers().subscribe((users) => {
-        console.log(users);
         this.users = users;
       }, (error) => {
         console.log(error);

@@ -24,6 +24,14 @@ export class TipoInvestimento {
     return this._http.get(this.baseUrl + '/investiment', this.options).pipe(map((response: Response) => response.json()));
   }
 
+  getInvestimentsAtivo(){
+    return this._http.get(this.baseUrl + '/investimentsativo', this.options).pipe(map((response: Response) => response.json()));
+  }
+
+  getInvestimentsInativo(){
+    return this._http.get(this.baseUrl + '/investimentsinativo', this.options).pipe(map((response: Response) => response.json()));
+  }
+
   getUser(id:Number){
     return this._http.get(this.baseUrl + '/investiment/' + id, this.options).pipe(map((response: Response) => response.json()));
   }
